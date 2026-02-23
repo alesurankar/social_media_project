@@ -32,6 +32,9 @@ apps/web/build/
 apps/mobile/.expo/
 apps/mobile/.expo-shared/
 apps/mobile/dist/
+apps/mobile/ios/
+apps/mobile/android/
+expo-env.d.ts
 
 # Desktop build / Electron / Vite
 apps/desktop/dist/
@@ -41,16 +44,24 @@ apps/desktop/build/
 *.tsbuildinfo
 next-env.d.ts
 
-# Optional: environment variables
+# Environment variables
 .env
 .env.local
 .env.*.local
 
-# Coverage / tests
+# Coverage / Tests
 coverage/
 
-# Misc
+# Misc / Platform specific
 *.pem
 .vercel
 .pnp*
 .yarn/*
+.kotlin/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+.metro-health-check*

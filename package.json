@@ -12,11 +12,11 @@
   "license": "ISC",
   "packageManager": "pnpm@10.30.1",
   "scripts": {
-    "dev:web": "turbo run dev --filter=web...",
-    "dev:mobile": "turbo run dev --filter=mobile...",
-    "dev:desktop": "turbo run dev --filter=desktop...",
-    "dev:server": "turbo run dev --filter=server...",
-    "dev:all": "turbo run dev"
+    "dev:web": "turbo run dev --filter=web",
+    "dev:mobile": "cd apps/mobile && pnpm run dev",
+    "dev:desktop": "turbo run dev --filter=desktop",
+    "dev:server": "turbo run dev --filter=server",
+    "dev:all": "pnpm run dev:web & pnpm run dev:desktop & pnpm run dev:server & pnpm run dev:mobile"
   },
   "workspaces": [
     "apps/*",

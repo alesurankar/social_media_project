@@ -1,4 +1,6 @@
 packages:
-  - "apps/*"
-  - "packages/*"
-  - "server/*"
+  - apps/*
+  - packages/*
+  - server/*
+
+nodeLinker: hoisted
