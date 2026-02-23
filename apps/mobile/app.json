@@ -1,5 +1,6 @@
 {
   "expo": {
+    "scheme": "social_media_project",
     "name": "mobile",
     "slug": "mobile",
     "version": "1.0.0",
