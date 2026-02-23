@@ -1,0 +1,47 @@
+# Node modules
+node_modules/
+**/node_modules/
+
+# Turbo repo cache
+.turbo/
+
+# Logs
+*.log
+yarn-error.log
+pnpm-debug.log
+npm-debug.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE / Editor
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Web build / Next.js
+apps/web/.next/
+apps/web/out/
+apps/web/build/
+
+# Mobile build / Expo
+apps/mobile/.expo/
+apps/mobile/.expo-shared/
+apps/mobile/.expo/
+apps/mobile/dist/
+
+# Desktop build / Electron / Vite
+apps/desktop/dist/
+apps/desktop/build/
+
+# TypeScript
+*.tsbuildinfo
+
+# Optional: environment variables
+.env
+.env.local
+.env.*.local
