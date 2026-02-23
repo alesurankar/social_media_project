@@ -26,24 +26,24 @@ social_media_project/
 
 🚀 Getting Started
 
-From the root of the monorepo:
+From the root of the monorepo install all dependencies for all apps
 ```bash
-pnpm install          # install all dependencies for all apps
+pnpm install
 ```
 
-Run Apps Individually:
+From the root of the monorepo Run Apps Individually:
 
 Web App (Next.js)
 ```bash
 pnpm run dev:web
 ```
-Open http://localhost:3000
+> Open http://localhost:3000
 
 Mobile App (Expo / React Native)
 ```bash
 pnpm run dev:mobile
 ```
-Scan the QR code in Expo Go (Android/iOS)
+> Scan the QR code in Expo Go (Android/iOS)
 
 Desktop App (Electron + Vite)
 ```bash
