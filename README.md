@@ -20,6 +20,7 @@ social_media_project/
 ├─ pnpm-workspace.yaml
 ├─ README.md
 └─ turbo.json
+```
 
 ---
 
@@ -30,19 +31,19 @@ From the root of the monorepo:
 pnpm install          # install all dependencies for all apps
 ```
 
-Run Apps Individually
+Run Apps Individually:
 
 Web App (Next.js)
 ```bash
 pnpm run dev:web
 ```
-# Open http://localhost:3000
+Open http://localhost:3000
 
 Mobile App (Expo / React Native)
 ```bash
 pnpm run dev:mobile
 ```
-# Scan the QR code in Expo Go (Android/iOS)
+Scan the QR code in Expo Go (Android/iOS)
 
 Desktop App (Electron + Vite)
 ```bash
