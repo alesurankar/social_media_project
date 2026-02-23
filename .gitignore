@@ -31,7 +31,6 @@ apps/web/build/
 # Mobile build / Expo
 apps/mobile/.expo/
 apps/mobile/.expo-shared/
-apps/mobile/.expo/
 apps/mobile/dist/
 
 # Desktop build / Electron / Vite
@@ -40,8 +39,18 @@ apps/desktop/build/
 
 # TypeScript
 *.tsbuildinfo
+next-env.d.ts
 
 # Optional: environment variables
 .env
 .env.local
 .env.*.local
+
+# Coverage / tests
+coverage/
+
+# Misc
+*.pem
+.vercel
+.pnp*
+.yarn/*
