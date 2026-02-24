@@ -9,14 +9,24 @@
 
 ```text
 social_media_project/
- ├─ apps/
- │   ├─ web/        # Next.js web app
- │   ├─ mobile/     # Expo / React Native mobile app
- │   └─ desktop/    # Electron + Vite desktop app
- ├─ packages/      # shared components, hooks, utils
- │   └─ icons/
- └─ server/        # backend server
+├─ apps/
+│   ├─ web/        # Next.js web app
+│   ├─ mobile/     # Expo / React Native mobile app
+│   └─ desktop/    # Electron + Vite desktop app
+├─ packages/       # shared components, hooks, utils
+│   └─ icons/
+│       ├─ svg/             # all the icons for visual
+│       ├─ Icon.tsx         # wrapper for the icon names
+│       └─ IconPaths.tsx    # path registry for SVG icons
+└─ server/        # backend server
 ```
+
+---
+
+## Requirements
+
+- Node.js 18+
+- pnpm 8+
 
 ---
 
@@ -26,6 +36,10 @@ From the root of the monorepo install all dependencies for all apps
 ```bash
 pnpm install
 ```
+
+---
+
+🧪 Development
 
 From the root of the monorepo Run Apps Individually:
 

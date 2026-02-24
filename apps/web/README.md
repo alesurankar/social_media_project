@@ -20,13 +20,13 @@ pnpm run dev:web   # start the web app
 apps/web/
 ├─ public/
 └─ src/
-  ├─ app/
-  │  ├─ App.tsx
-  │  ├─ global.css
-  │  ├─ layout.tsx
-  │  └─ page.tsx     # Entry point
-  └─ gui/
-     ├─ BodyFrame.tsx
-     ├─ FooterBar.tsx
-     └─ Navigation.tsx
+   ├─ app/
+   │  ├─ App.tsx
+   │  ├─ global.css
+   │  ├─ layout.tsx
+   │  └─ page.tsx     # Entry point
+   └─ gui/
+      ├─ BodyFrame.tsx
+      ├─ FooterBar.tsx
+      └─ Navigation.tsx
  ```

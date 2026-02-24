@@ -1,25 +1,35 @@
-import Bars4 from "./bars_4";
-import BarsArrowDown from "./bars_arrow_down";
-import BarsArrowUp from "./bars_arrow_up";
+import React from "react";
+import { ICON_PATHS, IconName } from "./IconPaths";
 
-type IconName = 
-  | "bars_4" 
-  | "bars_arrow_down"
-  | "bars_arrow_up";
-
-type IconProps = {
+type Props = {
   name: IconName;
   size?: number;
   color?: string;
+  strokeWidth?: number;
 };
 
-const icons = {
-  bars_4: Bars4,
-  bars_arrow_down: BarsArrowDown,
-  bars_arrow_up: BarsArrowUp,
+const Icon: React.FC<Props> = ({
+  name,
+  size = 24,
+  color = "currentColor",
+  strokeWidth = 1.5,
+}) => {
+  const path = ICON_PATHS[name];
+
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth={strokeWidth}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d={path} />
+    </svg>
+  );
 };
 
-export default function Icon({ name, size, color }: IconProps) {
-  const Component = icons[name];
-  return <Component size={size} color={color} />;
-}
+export default Icon;
