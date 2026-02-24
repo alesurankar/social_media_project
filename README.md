@@ -9,12 +9,13 @@
 
 ```text
 social_media_project/
-├─ apps/
-│  ├─ web/        # Next.js web app
-│  ├─ mobile/     # Expo / React Native mobile app
-│  └─ desktop/    # Electron + Vite desktop app
-├─ packages/      # shared components, hooks, utils
-└─ server/        # backend server
+ ├─ apps/
+ │   ├─ web/        # Next.js web app
+ │   ├─ mobile/     # Expo / React Native mobile app
+ │   └─ desktop/    # Electron + Vite desktop app
+ ├─ packages/      # shared components, hooks, utils
+ │   └─ icons/
+ └─ server/        # backend server
 ```
 
 ---
