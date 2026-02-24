@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "../../packages/icons/Icon.tsx", "../../packages/icons/bars_arrow_up.tsx", "../../packages/icons/bars_arrow_down.tsx", "../../packages/icons/bars_4.tsx"  ],
   "exclude": ["node_modules"]
 }
