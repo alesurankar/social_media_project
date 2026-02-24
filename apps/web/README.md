@@ -12,3 +12,16 @@ From the **root of the monorepo**:
 cd <root>
 pnpm install       # install all dependencies
 pnpm run dev:web   # start the web app
+```
+
+## 🏗 Project Structure
+
+```text
+apps/web/
+ ├─ public/
+ └─ src/
+    └─app/
+       ├─ global.css
+       ├─ layout.tsx
+       └─ page.tsx     # App Entry
+ ```

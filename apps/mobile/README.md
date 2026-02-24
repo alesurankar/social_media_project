@@ -12,3 +12,14 @@ From the **root of the monorepo**:
 cd <root>
 pnpm install          # install all dependencies
 pnpm run dev:mobile   # start the mobile app (Expo) and get the QR code
+```
+
+## 🏗 Project Structure
+
+```text
+apps/mobile/
+ ├─ app/
+ │   ├─ global.css
+ │   └─ index.tsx     # App Entry
+ └─ assets/
+ ```

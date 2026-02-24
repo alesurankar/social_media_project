@@ -14,12 +14,7 @@ social_media_project/
 │  ├─ mobile/     # Expo / React Native mobile app
 │  └─ desktop/    # Electron + Vite desktop app
 ├─ packages/      # shared components, hooks, utils
-├─ server/        # backend server
-├─ package.json
-├─ pnpm-lock.yaml
-├─ pnpm-workspace.yaml
-├─ README.md
-└─ turbo.json
+└─ server/        # backend server
 ```
 
 ---
