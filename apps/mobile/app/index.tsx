@@ -1,13 +1,7 @@
 import "./global.css"
-import { Text, View } from "react-native";
- 
-export default function Home() 
+import App from './App'
+
+export default function Page() 
 {
-  return (
-    <View className="flex flex-1 items-center justify-center">
-      <Text className="text-2xl font-bold text-blue-500">
-        Social Media Project Mobile App
-      </Text>
-    </View>
-  );
+  return <App />
 }

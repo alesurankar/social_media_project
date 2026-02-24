@@ -19,7 +19,12 @@ pnpm run dev:mobile   # start the mobile app (Expo) and get the QR code
 ```text
 apps/mobile/
  ├─ app/
+ │   ├─ App.tsx
  │   ├─ global.css
  │   └─ index.tsx     # App Entry
- └─ assets/
+ ├─assets/
+ └─gui/
+     ├─ BodyFrame.tsx
+     ├─ FooterBar.tsx
+     └─ Navigation.tsx
  ```

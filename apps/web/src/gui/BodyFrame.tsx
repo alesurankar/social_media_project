@@ -4,7 +4,7 @@ interface BodyFrameProps {
   className?: string;
 }
 
-const Body: React.FC<BodyFrameProps> = ({ className }) => {
+const BodyFrame: React.FC<BodyFrameProps> = ({ className }) => {
 
   return (
     <div className={`bg-gray-800 text-white p-4 ${className ?? ''}`}>
@@ -40,4 +40,4 @@ const Body: React.FC<BodyFrameProps> = ({ className }) => {
   );
 };
 
-export default Body;
+export default BodyFrame;

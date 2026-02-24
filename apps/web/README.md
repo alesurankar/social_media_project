@@ -26,7 +26,7 @@ apps/web/
     │  ├─ layout.tsx
     │  └─ page.tsx     # Entry point
     └─ gui/
-       ├─ BodyFrame.css
+       ├─ BodyFrame.tsx
        ├─ FooterBar.tsx
        └─ Navigation.tsx
  ```
