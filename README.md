@@ -16,7 +16,8 @@ social_media_project/
 ├─ packages/       # shared components, hooks, utils
 │   └─ icons/
 │       ├─ svg/             # all the icons for visual
-│       ├─ Icon.tsx         # wrapper for the icon names
+│       ├─ Icon.native.tsx  # wrapper for mobile icon names
+│       ├─ Icon.tsx         # wrapper for web and desktop icon names
 │       └─ IconPaths.tsx    # path registry for SVG icons
 └─ server/        # backend server
 ```
