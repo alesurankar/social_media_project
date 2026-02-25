@@ -4,16 +4,21 @@
 ```text
 server/
 ├─ config/
-│  └─ database.js
+│  └─ database.js          # MongoDB connection logic
 ├─ controllers/
-│  └─ userController.js
+│  └─ userController.js    # Controller functions for user routes
+├─ data/
+│  └─ userProvider.js      # Fetch users from DB or local seed
 ├─ helpers/
-│  └─ asyncErrorHandler.js
+│  └─ asyncErrorHandler.js # Async wrapper for controllers
 ├─ models/
-│  └─ userModel.js
+│  └─ userModel.js         # Mongoose User schema
 ├─ routes/
-│  └─ userRoutes.js
-├─ .env
-├─ app.js
-└─ server.js
+│  └─ userRoutes.js        # Express routes for users
+├─ seed/
+│  └─ users.js             # Local user seed array
+├─ .env                    # Environment variables
+├─ app.js                  # Express app setup
+├─ seedUsers.js            # Seed script to populate MongoDB
+└─ server.js               # Entry point to start the server
 ```
