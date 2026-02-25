@@ -1,5 +1,20 @@
+# Backend Server
 
-## 🏗 Structure
+MongoDB atlas database with Express.
+
+
+## Development
+
+From the **root of the monorepo**:
+
+```bash
+cd <root>
+pnpm install           # install all dependencies
+pnpm run seed:server   # seed the database with default users
+pnpm run dev:server    # run the server 
+```
+
+## 🏗 Project Structure
 
 ```text
 server/

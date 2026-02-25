@@ -5,6 +5,18 @@
 
 ---
 
+## Apps
+
+- [Web](./apps/web/README.md) – Next.js web application
+- [Mobile](./apps/mobile/README.md) – Expo / React Native mobile app
+- [Desktop](./apps/desktop/README.md) – Cef + React + Vite desktop app
+
+## Server
+
+- [Server](./server/README.md) – Backend server with Express, MongoDB, and seeding scripts
+
+---
+
 ## 🏗 Project Structure
 
 ```text
@@ -56,9 +68,10 @@ pnpm run dev:mobile
 ```
 > Scan the QR code in Expo Go (Android/iOS)
 
-Desktop App (Electron + Vite)
+Seed the database
+Server
 ```bash
-pnpm run dev:desktop
+pnpm run seed:server
 ```
 
 Server
@@ -68,5 +81,5 @@ pnpm run dev:server
 
 Run Everything at Once
 ```bash
-pnpm run dev:all
+pnpm run dev
 ```
