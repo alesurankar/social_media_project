@@ -1,7 +1,8 @@
 # Backend Server
+ 
+> Backend server with Express, MongoDB, and seeding scripts
 
-MongoDB atlas database with Express.
-
+---
 
 ## Development
 
@@ -13,6 +14,7 @@ pnpm install           # install all dependencies
 pnpm run seed:server   # seed the database with default users
 pnpm run dev:server    # run the server 
 ```
+---
 
 ## 🏗 Project Structure
 

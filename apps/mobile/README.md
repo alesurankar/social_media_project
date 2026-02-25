@@ -1,8 +1,9 @@
 # Mobile App
 
-React Native + Expo frontend for the Social Media Project.
+> React Native + Expo frontend for the Social Media Project.
+> This app is part of a monorepo. Shared components and hooks are in the `packages/` folder.
 
-This app is part of a monorepo. Shared components and hooks are in the `packages/` folder.
+---
 
 ## Development
 
@@ -13,6 +14,8 @@ cd <root>
 pnpm install          # install all dependencies
 pnpm run dev:mobile   # start the mobile app (Expo) and get the QR code
 ```
+
+---
 
 ## 🏗 Project Structure
 

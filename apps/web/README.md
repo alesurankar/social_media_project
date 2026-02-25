@@ -1,8 +1,9 @@
 # Web App
 
-Next.js + TypeScript frontend for the Social Media Project.
+> Next.js + TypeScript frontend for the Social Media Project.
+> This app is part of a monorepo. Shared components and hooks are in the `packages/` folder.
 
-This app is part of a monorepo. Shared components and hooks are in the `packages/` folder.
+---
 
 ## Development
 
@@ -13,6 +14,8 @@ cd <root>
 pnpm install       # install all dependencies
 pnpm run dev:web   # start the web app
 ```
+
+---
 
 ## 🏗 Project Structure
 
