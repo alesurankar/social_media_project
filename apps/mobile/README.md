@@ -1,6 +1,7 @@
 # Mobile App
 
 > React Native + Expo frontend for the Social Media Project.
+
 > This app is part of a monorepo. Shared components and hooks are in the `packages/` folder.
 
 ---
