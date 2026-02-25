@@ -1,6 +1,6 @@
 packages:
   - apps/*
   - packages/*
-  - server/*
+  - server
 
 nodeLinker: hoisted
