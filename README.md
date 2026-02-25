@@ -1,7 +1,7 @@
 # Social Media Project Monorepo
 
 > Multi-platform social media platform (Web, Mobile, Desktop)  
-> Built with **React**, **Next.js**, **Expo**, **Electron**, and managed with **pnpm** + **Turborepo**.
+> Built with **React**, **Next.js**, **Expo**, **Cef**, and managed with **pnpm** + **Turborepo**.
 
 ---
 
@@ -12,7 +12,7 @@ social_media_project/
 ├─ apps/
 │   ├─ web/        # Next.js web app
 │   ├─ mobile/     # Expo / React Native mobile app
-│   └─ desktop/    # Electron + Vite desktop app
+│   └─ desktop/    # Cef + React + Vite desktop app
 ├─ packages/       # shared components, hooks, utils
 │   └─ icons/
 │       ├─ svg/             # all the icons for visual
