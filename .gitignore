@@ -46,15 +46,12 @@ next-env.d.ts
 
 # Environment variables
 .env
+.env*
 .env.local
 .env.*.local
 
 # Coverage / Tests
 coverage/
-
-# env files (can opt-in for committing if needed)
-.env*
-config.env
 
 # Misc / Platform specific
 *.pem
