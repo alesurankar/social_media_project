@@ -12,27 +12,6 @@ const Navigation = () => {
       <div className="pl-2">Navigation</div>
         <Icon name="bars_arrow_down" size={32} color="white" />
       <Icon name="bars_arrow_up" size={28} color="white" />
-      <div className="flex">
-        
-        <button 
-            id="minimize"
-            className="w-12 h-10 flex items-center justify-center hover:bg-[#373737]"
-        >
-          ―
-        </button>
-        <button 
-            id="maximize"
-            className="w-12 h-10 flex items-center justify-center hover:bg-[#373737]"
-        >
-          ☐
-        </button>
-        <button 
-            id="close"
-            className="w-12 h-10 flex items-center justify-center hover:bg-red-600"
-        >
-          ✕
-        </button>
-      </div>
     </div>
   );
 };

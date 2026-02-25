@@ -1,3 +1,4 @@
+import User from "../models/userModel.js";
 import asyncErrorHandler from "../helpers/asyncErrorHandler.js";
 import { getUsers } from "../data/userProvider.js";
 
@@ -29,6 +30,7 @@ export const createUser = asyncErrorHandler(async (req, res) => {
  */
 export const getAllUsers = asyncErrorHandler(async (req, res) => {
     const users = await getUsers();
+    
     res.status(200).json({
         success: true,
         count: users.length,

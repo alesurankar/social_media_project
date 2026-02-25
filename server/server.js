@@ -1,4 +1,10 @@
-import "dotenv/config";
+/**
+ * Server Entry Point
+ * This file starts the Express server, configures external services,
+ * and handles global error events
+ */
+
+import "dotenv/config";  // load .env
 import app from "./app.js";
 import { connectDatabase } from "./config/database.js";
 

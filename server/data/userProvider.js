@@ -1,10 +1,14 @@
+import "dotenv/config";
 import mongoose from "mongoose";
 import User from "../models/userModel.js";
-import { users as localUsers } from "../seed/users.js"; // your seed array
-import "dotenv/config";
+import { users } from "../seed/users.js";
 
 const MONGO_URI = process.env.MONGO_URI;
 const USE_LOCAL_DATA = process.env.USE_LOCAL_DATA === "true";
+
+const localUsers = [
+  ...users,
+];
 
 // Function to connect to MongoDB
 async function connectMongo() 
@@ -29,9 +33,9 @@ export async function getUsers()
 
         // Fallback to local if DB is empty
         if (!users || users.length === 0) {
-        console.warn("⚠️ MongoDB returned no users");
-        console.log("📦 Falling back to local seed users");
-        return localUsers;
+            console.warn("⚠️ MongoDB returned no users");
+            console.log("📦 Falling back to local seed users");
+            return localUsers;
         }
 
         console.log("🌍 Fetched users from MongoDB");

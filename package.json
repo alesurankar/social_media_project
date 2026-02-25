@@ -11,6 +11,7 @@
     "dev:web": "pnpm --filter web dev",
     "dev:mobile": "pnpm --filter mobile dev",
     "dev:server": "pnpm --filter server dev",
+    "seed:server": "pnpm --filter server seed",
     "dev": "concurrently \"pnpm run dev:web\" \"pnpm run dev:mobile\" \"pnpm run dev:server\""
   },
   "devDependencies": {

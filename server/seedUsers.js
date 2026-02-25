@@ -1,7 +1,7 @@
 import "dotenv/config";
 import mongoose from "mongoose";
-import User from "../models/userModel.js";
-import { users } from "../data/userProvider.js";
+import User from "./models/userModel.js";
+import { users } from "./seed/users.js";
 
 const MONGO_URI = process.env.MONGO_URI;
 
