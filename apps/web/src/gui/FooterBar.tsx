@@ -2,8 +2,8 @@
 const FooterBar = () => {
 
   return (
-    <div className="h-10 w-full flex items-center justify-between bg-[#007acc]">
-      <p className="pl-10 pb-1 text-lg truncate">FooterBar</p>
+    <div className="bg-blue-500 h-10 w-full flex items-center justify-between p-4">
+      <p className="text-white pl-10 pb-1 text-lg">FooterBar</p>
     </div>
   );
 };
