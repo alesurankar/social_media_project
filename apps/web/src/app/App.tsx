@@ -1,4 +1,3 @@
-import React from "react";
 import BodyFrame from '../gui/BodyFrame'
 import FooterBar from '../gui/FooterBar'
 import Navigation from '../gui/Navigation'

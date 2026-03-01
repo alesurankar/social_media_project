@@ -10,13 +10,14 @@ const BodyFrame: React.FC<BodyFrameProps> = ({ className }) => {
     <View className={`bg-gray-800 p-4 ${className ?? ''}`}>
       <View>
         <Text className="text-red-500 text-center">React Frontend</Text>
-        <Text className="text-white text-center">{'\n\n\n'}</Text>
+        <Text>{'\n\n\n'}</Text>
         <Text className="text-white text-center">BodyFrame</Text>
         <Text className="text-white text-center">BodyFrame</Text>
         <Text className="text-white text-center">BodyFrame</Text>
         <Text className="text-white text-center">BodyFrame</Text>
         <Modal>
-            <Text>Content</Text>
+        <Text className="text-black text-center">Modal</Text>
+        <Text className="text-black text-center">Modal</Text>
         </Modal>
       </View>
     </View>
