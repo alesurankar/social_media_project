@@ -25,11 +25,11 @@ const AuthForm = ({ onSuccess, setUser }: AuthFormProps) => {
   const handleLogin = async () => {
     try {
       //console.log("Login successful");
-      const { data } = await api.post("/login", {
+      const { data } = await api.post("/users/login", {
         email: form.email,
         password: form.password,
       }); 
-      //console.log("Login payload:", data);
+      console.log("Login payload:", data);
       setUser(data.user);
       onSuccess();
     }
@@ -45,12 +45,12 @@ const AuthForm = ({ onSuccess, setUser }: AuthFormProps) => {
   const handleSignup = async () => {
     try {
       //console.log("Register successful");
-      const { data } = await api.post("/register", {
+      const { data } = await api.post("/users/register", {
         name: form.username,
         email: form.email,
         password: form.password,
       });
-      //console.log("Signup successful:", data);
+      console.log("Signup successful:", data);
       setUser(data.user);
       onSuccess();
     }
