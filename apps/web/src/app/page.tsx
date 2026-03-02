@@ -10,6 +10,8 @@ export default function LandingPage() {
   const [showModal, setShowModal] = useState(false);
   const [checkingAuth, setCheckingAuth] = useState(true);
 
+  const [currentUser, setCurrentUser] = useState<any>(null);
+
   const checkAuth = () => {
     const token = localStorage.getItem("token");
     if (token) {
@@ -45,6 +47,7 @@ export default function LandingPage() {
           />
         </Modal>
       )}
+      {currentUser && <p className="mt-4">Hello, {currentUser.username}</p>}
     </main>
   );
 }
