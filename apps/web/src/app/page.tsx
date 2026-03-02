@@ -5,18 +5,26 @@ import { useRouter } from "next/navigation";
 import Modal from "../components/Modal";
 import AuthForm from "../components/AuthForm";
 
-export default function LandingPage() 
-{
+export default function LandingPage() {
   const router = useRouter();
   const [showModal, setShowModal] = useState(false);
+  const [checkingAuth, setCheckingAuth] = useState(true);
 
-  useEffect(() => {
+  const checkAuth = () => {
     const token = localStorage.getItem("token");
-
     if (token) {
       router.push("/feed");
+    } 
+    else {
+      setCheckingAuth(false);
     }
+  };
+
+  useEffect(() => {
+    checkAuth();
   }, [router]);
+
+  if (checkingAuth) return <div className="flex items-center justify-center h-screen">Loading...</div>;
 
   return (
     <main className="flex flex-col items-center justify-center h-screen">
@@ -31,10 +39,12 @@ export default function LandingPage()
 
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <AuthForm onSuccess={() => {
-            setShowModal(false);
-            router.push("/feed");
-          }} />
+          <AuthForm
+            onSuccess={() => {
+              setShowModal(false);
+              checkAuth();
+            }}
+          />
         </Modal>
       )}
     </main>
