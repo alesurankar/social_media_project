@@ -215,6 +215,10 @@ export const getUserDetails = asyncErrorHandler(async (req, res, next) => {
 // // Get All Users --ADMIN
 // export const .getAllUsers = asyncErrorHandler(async (req, res, next) => {
 
+//      if (req.user.role !== "admin") {
+//          return next(new ErrorHandler("Forbidden", 403));
+//      } 
+
 //     const users = await User.find();
 
 //     res.status(200).json({

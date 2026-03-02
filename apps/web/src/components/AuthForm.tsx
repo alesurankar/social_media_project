@@ -2,15 +2,20 @@
 
 import { useState } from "react";
 import Button from "./Button";
-//import api from "../utils/api";
+import api from "../../../../packages/utils/api"
 
 export interface AuthFormProps {
   onSuccess: () => void;
+  setUser: (user: any) => void;
 }
 
-const AuthForm = ({ onSuccess }: AuthFormProps) => {
+const AuthForm = ({ onSuccess, setUser }: AuthFormProps) => {
   const [mode, setMode] = useState<"login" | "signup">("login");
-  const [form, setForm] = useState({ username: "", email: "", password: "" });
+  const [form, setForm] = useState({ 
+    username: "", 
+    email: "", 
+    password: "" 
+  });
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -18,13 +23,43 @@ const AuthForm = ({ onSuccess }: AuthFormProps) => {
   };
 
   const handleLogin = async () => {
-      console.log("Login successful");
+    try {
+      //console.log("Login successful");
+      const { data } = await api.post("/login", {
+        email: form.email,
+        password: form.password,
+      }); 
+      //console.log("Login payload:", data);
+      setUser(data.user);
       onSuccess();
+    }
+    catch (err: any) {
+      console.error(
+        "Login failed:",
+        err.response?.data?.message || err.message
+      );
+
+    }
   };
 
   const handleSignup = async () => {
-      console.log("Signup successful");
+    try {
+      //console.log("Register successful");
+      const { data } = await api.post("/register", {
+        name: form.username,
+        email: form.email,
+        password: form.password,
+      });
+      //console.log("Signup successful:", data);
+      setUser(data.user);
       onSuccess();
+    }
+    catch (err: any) {
+      console.error(
+        "Signup failed:",
+        err.response?.data?.message || err.message
+      );
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {

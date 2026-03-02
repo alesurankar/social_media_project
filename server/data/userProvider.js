@@ -1,4 +1,3 @@
-import "dotenv/config";
 import mongoose from "mongoose";
 import User from "../models/userModel.js";
 import { users } from "../seed/users.js";
