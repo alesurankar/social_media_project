@@ -15,9 +15,12 @@ async function seed()
         await User.deleteMany({});
         console.log("🗑️  Cleared existing users");
 
-        // Insert seed data
-        await User.insertMany(users);
-        console.log(`🌱 Inserted ${users.length} users`);
+        // Insert users one by one so passwords get hashed
+        for (const userData of users) {
+            const user = new User(userData);
+            await user.save(); // <-- pre-save hook runs here
+            console.log(`🌱 Inserted user: ${user.username}`);
+        }
 
         process.exit(0);
     } 

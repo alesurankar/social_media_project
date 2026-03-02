@@ -40,10 +40,8 @@ export default function LandingPage() {
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <AuthForm
-            onSuccess={() => {
-              setShowModal(false);
-              checkAuth();
-            }}
+            onSuccess={() => console.log("Logged in!")}
+            setUser={(user) => setCurrentUser(user)}
           />
         </Modal>
       )}
