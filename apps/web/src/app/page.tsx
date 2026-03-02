@@ -9,10 +9,9 @@ export default function LandingPage() {
   const router = useRouter();
   const [showModal, setShowModal] = useState(false);
   const [checkingAuth, setCheckingAuth] = useState(true);
-
   const [currentUser, setCurrentUser] = useState<any>(null);
 
-  const checkAuth = () => {
+  useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
       router.push("/feed");
@@ -20,11 +19,7 @@ export default function LandingPage() {
     else {
       setCheckingAuth(false);
     }
-  };
-
-  useEffect(() => {
-    checkAuth();
-  }, [router]);
+  }, []);
 
   if (checkingAuth) return <div className="flex items-center justify-center h-screen">Loading...</div>;
 
@@ -42,7 +37,7 @@ export default function LandingPage() {
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <AuthForm
-            onSuccess={() => console.log("Logged in!")}
+            onSuccess={() => setShowModal(false)}
             setUser={(user) => setCurrentUser(user)}
           />
         </Modal>

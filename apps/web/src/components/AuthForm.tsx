@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Button from "./Button";
 import api from "../../../../packages/utils/api"
 
@@ -10,6 +11,7 @@ export interface AuthFormProps {
 }
 
 const AuthForm = ({ onSuccess, setUser }: AuthFormProps) => {
+  const router = useRouter();
   const [mode, setMode] = useState<"login" | "signup">("login");
   const [form, setForm] = useState({ 
     username: "", 
@@ -31,7 +33,9 @@ const AuthForm = ({ onSuccess, setUser }: AuthFormProps) => {
       }); 
       console.log("Login payload:", data);
       setUser(data.user);
+      localStorage.setItem("token", data.token);
       onSuccess();
+      router.push("/feed");
     }
     catch (err: any) {
       console.error(
@@ -52,7 +56,9 @@ const AuthForm = ({ onSuccess, setUser }: AuthFormProps) => {
       });
       console.log("Signup successful:", data);
       setUser(data.user);
+      localStorage.setItem("token", data.token);
       onSuccess();
+      router.push("/feed");
     }
     catch (err: any) {
       console.error(
