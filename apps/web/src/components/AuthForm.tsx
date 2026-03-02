@@ -4,64 +4,27 @@ import { useState } from "react";
 import Button from "./Button";
 //import api from "../utils/api";
 
-interface AuthFormProps {
+export interface AuthFormProps {
   onSuccess: () => void;
 }
 
 const AuthForm = ({ onSuccess }: AuthFormProps) => {
   const [mode, setMode] = useState<"login" | "signup">("login");
-
-  const [form, setForm] = useState({
-    username: "",
-    email: "",
-    password: "",
-  });
+  const [form, setForm] = useState({ username: "", email: "", password: "" });
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setForm((prevForm) => ({
-      ...prevForm,
-      [name]: value,
-    }));
+    setForm((prevForm) => ({ ...prevForm, [name]: value }));
   };
 
   const handleLogin = async () => {
-    // try {
-    //   //console.log("Login successful");
-    //   const { data } = await api.post("/login", {
-    //     email: form.email,
-    //     password: form.password,
-    //   }); 
-    //   //console.log("Login payload:", data);
-    //   setUser(data.user);
-    //   onSuccess();
-    // }
-    // catch (err: any) {
-    //   console.error(
-    //     "Login failed:",
-    //     err.response?.data?.message || err.message
-    //   );
-    // }
+      console.log("Login successful");
+      onSuccess();
   };
 
   const handleSignup = async () => {
-    // try {
-    //   //console.log("Register successful");
-    //   const { data } = await api.post("/register", {
-    //     name: form.username,
-    //     email: form.email,
-    //     password: form.password,
-    //   });
-    //   //console.log("Signup successful:", data);
-    //   setUser(data.user);
-    //   onSuccess();
-    // } 
-    // catch (err: any) {
-    //   console.error(
-    //     "Signup failed:",
-    //     err.response?.data?.message || err.message
-    //   );
-    // }
+      console.log("Signup successful");
+      onSuccess();
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -90,91 +53,73 @@ const AuthForm = ({ onSuccess }: AuthFormProps) => {
       {/* RIGHT PANEL */}
       <div className="bg-[#4a5748] py-6 lg:py-12 px-10 lg:px-12">
         {/* Content */}
-        <div className="text-gray-800 font-semibold text-lg lg:text-xl text-center">
-          {mode === "login" ? (
-            <form onSubmit={handleSubmit}>
-              <div>
-                <h2 className="text-black text-xl lg:text-4xl mb-4 lg:mb-8">LOG IN</h2>
-                <input 
-                  type="email"
-                  name="email"
-                  value={form.email}
-                  onChange={handleChange}
-                  required
-                  placeholder="E-mail"
-                  className="mb-1 w-full max-w-sm border rounded px-2 lg:px-3 py-0 lg:py-2 placeholder:text-sm lg:placeholder:text-lg"
-                  />
-                <input 
-                  type="password"
-                  name="password"
-                  value={form.password}
-                  onChange={handleChange}
-                  required
-                  placeholder="Password"
-                  className="w-full max-w-sm border rounded px-2 lg:px-3 py-0 lg:py-2 placeholder:text-sm lg:placeholder:text-lg"
-                  />
-              </div>
-              <div className='flex justify-center mt-4 -mb-2'>
-                <Button
-                      title='Log In'
-                      mainClassName='bg-[#7c2923] hover:bg-[#d5453a]'
-                      titleClassName='text-black'
-                    />
-              </div>
-              <div className="mt-6 text-center space-y-2">
-                <span>Don't have an account?</span>
-                <button className="text-[#0a9c38] hover:underline mt-4" onClick={() => setMode("signup")}>Signup</button>
-              </div>
-            </form>
-          ) : (
-            <div>
-              <form onSubmit={handleSubmit}>
-                <div>
-                  <h2 className="text-black text-xl lg:text-4xl mb-4 lg:mb-8">SIGN UP</h2>
-                  <input
-                    type="text"
-                    name="username"
-                    value={form.username}
-                    onChange={handleChange}
-                    required
-                    placeholder="Username"
-                    className="mb-1 w-full max-w-sm border rounded px-2 lg:px-3 py-0 lg:py-2 placeholder:text-sm lg:placeholder:text-lg"
-                    />
-                  <input 
-                    type="email" 
-                    name="email"
-                    value={form.email}
-                    onChange={handleChange}
-                    required
-                    placeholder="E-mail" 
-                    className="mb-1 w-full max-w-sm border rounded px-2 lg:px-3 py-0 lg:py-2 placeholder:text-sm lg:placeholder:text-lg"
-                    />
-                  <input 
-                    type="password"
-                    name="password"
-                    value={form.password}
-                    onChange={handleChange}
-                    required
-                    placeholder="Password" 
-                    className="mb-1 w-full max-w-sm border rounded px-2 lg:px-3 py-0 lg:py-2 placeholder:text-sm lg:placeholder:text-lg"
-                    />
-                </div>
-                <div className='flex justify-center mt-2 -mb-2'>
-                  <Button
-                    type="submit"
-                    title='Sign Up'
-                    mainClassName='bg-[#7c2923] hover:bg-[#d5453a]'
-                    titleClassName='text-black'
-                  />
-                </div>
-                <div className="mt-6 text-center space-y-2">
-                  <span>Already have an account?</span>
-                  <button className="text-[#0a9c38] hover:underline mt-4" onClick={() => setMode("login")}>Login</button>
-                </div>
-              </form>
-            </div>
+        <form onSubmit={handleSubmit} className="text-center">
+          <h2 className="text-black text-xl lg:text-4xl mb-6">
+            {mode === "login" ? "LOG IN" : "SIGN UP"}
+          </h2>
+          {mode === "signup" && (
+            <input
+              type="text"
+              name="username"
+              value={form.username}
+              onChange={handleChange}
+              required
+              placeholder="Username"
+              className="mb-2 w-full max-w-sm border rounded px-2 py-2 placeholder:text-sm lg:placeholder:text-lg"
+            />
           )}
-        </div>
+          <input
+            type="email"
+            name="email"
+            value={form.email}
+            onChange={handleChange}
+            required
+            placeholder="E-mail"
+            className="mb-2 w-full max-w-sm border rounded px-2 py-2 placeholder:text-sm lg:placeholder:text-lg"
+          />
+          <input
+            type="password"
+            name="password"
+            value={form.password}
+            onChange={handleChange}
+            required
+            placeholder="Password"
+            className="mb-4 w-full max-w-sm border rounded px-2 py-2 placeholder:text-sm lg:placeholder:text-lg"
+          />
+
+          <div className="flex justify-center mb-4">
+            <Button
+              type="submit"
+              title={mode === "login" ? "Log In" : "Sign Up"}
+              mainClassName="bg-[#7c2923] hover:bg-[#d5453a]"
+              titleClassName="text-black"
+            />
+          </div>
+
+          <div className="text-center">
+            {mode === "login" ? (
+              <>
+                <span>Don't have an account?</span>
+                <button
+                  type="button"
+                  className="text-[#0a9c38] hover:underline ml-2"
+                  onClick={() => setMode("signup")}>
+                  Sign Up
+                </button>
+              </>
+            ) : (
+              <>
+                <span>Already have an account?</span>
+                <button
+                  type="button"
+                  className="text-[#0a9c38] hover:underline ml-2"
+                  onClick={() => setMode("login")}>
+                  Log In
+                </button>
+              </>
+            )}
+          </div>
+        </form>
       </div>
     </div>
   );

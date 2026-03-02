@@ -1,11 +1,20 @@
-interface ModalProps {
+"use client";
+
+import React from "react";
+
+export interface ModalProps {
   onClose?: () => void;
   children?: React.ReactNode;
   maxWidth?: string;
   padding?: string;
 }
 
-const Modal = ({ onClose, children, maxWidth = "max-w-3xl", padding = "p-0" }: ModalProps) => (
+const Modal = ({ 
+  onClose, 
+  children, 
+  maxWidth = "max-w-3xl", 
+  padding = "p-0" 
+}: ModalProps) => (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
       <div className={`relative bg-white rounded-lg w-full ${maxWidth} ${padding}`}>
         {/* Close button */}
