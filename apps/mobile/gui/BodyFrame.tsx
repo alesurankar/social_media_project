@@ -1,5 +1,5 @@
 import { View, Text } from "react-native";
-import Modal from "../../../packages/components/Modal"
+import Modal from "../components/Modal";
 
 interface BodyFrameProps {
   className?: string;

@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import Button from "./Button";
 //import api from "../utils/api";

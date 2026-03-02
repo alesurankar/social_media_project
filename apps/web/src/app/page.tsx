@@ -1,6 +1,42 @@
-import App from './App'
+"use client";
 
-export default function Page() 
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import Modal from "../components/Modal";
+import AuthForm from "../components/AuthForm";
+
+export default function LandingPage() 
 {
-  return <App />
+  const router = useRouter();
+  const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    if (token) {
+      router.push("/feed");
+    }
+  }, [router]);
+
+  return (
+    <main className="flex flex-col items-center justify-center h-screen">
+      <h1 className="text-4xl font-bold">Welcome to SocialApp</h1>
+      
+      <button
+        className="mt-6 px-6 py-2 bg-blue-500 text-white rounded"
+        onClick={() => setShowModal(true)}
+      >
+        Login
+      </button>
+
+      {showModal && (
+        <Modal onClose={() => setShowModal(false)}>
+          <AuthForm onSuccess={() => {
+            setShowModal(false);
+            router.push("/feed");
+          }} />
+        </Modal>
+      )}
+    </main>
+  );
 }
