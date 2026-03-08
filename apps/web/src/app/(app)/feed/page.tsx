@@ -1,18 +1,20 @@
-import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
+"use client";
 
-export default async function FeedPage() {
-  const cookieStore = await cookies(); 
-  const token = cookieStore.get("token")?.value;
+import { useRouter } from "next/navigation";
 
-  if (!token) {
-    redirect("/");
-  }
+
+export default function FeedPage() {
+  const router = useRouter();
 
   return (
     <div>
       <h1>Feed Page</h1>
-      <p>Only logged-in users can see this.</p>
+      <p>feed page content.</p>
+      <button
+        className="px-14 py-6 bg-blue-500 text-white rounded"
+        onClick={() => router.push("/")} 
+      >Back
+      </button> 
     </div>
   );
 }

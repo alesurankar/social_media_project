@@ -1,48 +1,28 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import Modal from "../components/Modal";
-import AuthForm from "../components/AuthForm";
+
 
 export default function LandingPage() {
   const router = useRouter();
-  const [showModal, setShowModal] = useState(false);
-  const [checkingAuth, setCheckingAuth] = useState(true);
-  const [currentUser, setCurrentUser] = useState<any>(null);
-
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      router.push("/feed");
-    } 
-    else {
-      setCheckingAuth(false);
-    }
-  }, []);
-
-  if (checkingAuth) return <div className="flex items-center justify-center h-screen">Loading...</div>;
 
   return (
     <main className="flex flex-col items-center justify-center h-screen">
-      <h1 className="text-4xl font-bold">Welcome to SocialApp</h1>
-      
+      <h1>This is Landing Page</h1>
+      <h1 className="text-red-500 text-5xl">Hello World</h1>
+      <h2>This is default H2</h2>
+      <h1>This is H1</h1>
+      <h2>This is H2</h2>
+      <h3>This is H2</h3>
+      <h4>This is H2</h4>
+      <h5>This is H2</h5>
+      <h6 className="text-white">This is H2</h6>
+      <p>This is p</p>
       <button
-        className="mt-6 px-6 py-2 bg-blue-500 text-white rounded"
-        onClick={() => setShowModal(true)}
-      >
-        Login
-      </button>
-
-      {showModal && (
-        <Modal onClose={() => setShowModal(false)}>
-          <AuthForm
-            onSuccess={() => setShowModal(false)}
-            setUser={(user) => setCurrentUser(user)}
-          />
-        </Modal>
-      )}
-      {currentUser && <p className="mt-4">Hello, {currentUser.username}</p>}
+        className="px-14 py-6 bg-blue-500 text-white rounded"
+        onClick={() => router.push("/feed")} 
+      >Next
+      </button> 
     </main>
   );
 }
