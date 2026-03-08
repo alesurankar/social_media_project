@@ -1,50 +1,58 @@
 @import "tailwindcss";
 
-h1 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #000000;
-  margin-bottom: 1rem;
-}
-
-h2 {
-  font-size: 2rem;
-  font-weight: 600;
-  color: #000000;
-  margin-bottom: 0.8rem;
-}
-
-h3 {
-  font-size: 1.75rem;
-  font-weight: 600;
-  color: #111111;
-  margin-bottom: 0.7rem;
-}
-
-h4 {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: #111111;
-  margin-bottom: 0.6rem;
-}
-
-h5 {
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: #222222;
-  margin-bottom: 0.5rem;
-}
-
-h6 {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #222222;
-  margin-bottom: 0.4rem;
-}
-
-p {
-  font-size: 1rem;
-  color: #333;
-  line-height: 1.6;
-  margin-bottom: 1rem;
+@layer base {
+    h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #000000;
+        margin-bottom: 1rem;
+    }
+    h2 {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #000000;
+        margin-bottom: 0.8rem;
+    }
+    h3 {
+        font-size: 1.75rem;
+        font-weight: 600;
+        color: #111111;
+        margin-bottom: 0.7rem;
+    }
+    h4 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: #111111;
+        margin-bottom: 0.6rem;
+    }
+    h5 {
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: #222222;
+        margin-bottom: 0.5rem;
+    }
+    h6 {
+        font-size: 1rem;
+        font-weight: 500;
+        color: #222222;
+        margin-bottom: 0.4rem;
+    }
+    p {
+        font-size: 1rem;
+        color: #333;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+    button {
+        background-color: #007bff;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 0.25rem;
+        border: none;
+        cursor: pointer;
+    }
+    a {
+        color: #1d4ed8;
+        text-decoration: underline;
+    }
 }
