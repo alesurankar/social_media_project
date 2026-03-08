@@ -1,9 +1,9 @@
-import { View, Text } from "react-native";
+import { View, StyleSheet } from "react-native";
 import Icon from "../../../packages/icons/Icon.native";
 
 const Navigation = () => {
   return (
-    <View className="bg-blue-500 w-full flex-row justify-between items-center p-4 px-4">
+    <View style={styles.container}>
       <Icon name="bars_4" size={28} color="#630c0c" />
       <Icon name="globe" size={28} color="#630c0c" />
       <Icon name="bell" size={28} color="#630c0c" />
@@ -15,5 +15,17 @@ const Navigation = () => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#3b82f6",
+    width: "100%",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingVertical: 16,
+    paddingHorizontal: 16,
+  },
+});
 
 export default Navigation;

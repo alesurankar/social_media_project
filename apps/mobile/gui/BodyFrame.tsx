@@ -1,27 +1,46 @@
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import Modal from "../components/Modal";
 
 interface BodyFrameProps {
-  className?: string;
+  style?: object;
 }
 
-const BodyFrame: React.FC<BodyFrameProps> = ({ className }) => {
+const BodyFrame: React.FC<BodyFrameProps> = ({ style }) => {
   return (
-    <View className={`bg-gray-800 p-4 ${className ?? ''}`}>
+    <View style={[styles.container, style]}>
       <View>
-        <Text className="text-red-500 text-center">React Frontend</Text>
+        <Text style={styles.redText}>React Frontend</Text>
         <Text>{'\n\n\n'}</Text>
-        <Text className="text-white text-center">BodyFrame</Text>
-        <Text className="text-white text-center">BodyFrame</Text>
-        <Text className="text-white text-center">BodyFrame</Text>
-        <Text className="text-white text-center">BodyFrame</Text>
+        <Text style={styles.whiteText}>BodyFrame</Text>
+        <Text style={styles.whiteText}>BodyFrame</Text>
+        <Text style={styles.whiteText}>BodyFrame</Text>
+        <Text style={styles.whiteText}>BodyFrame</Text>
         <Modal>
-        <Text className="text-black text-center">Modal</Text>
-        <Text className="text-black text-center">Modal</Text>
+          <Text style={styles.blackText}>Modal</Text>
+          <Text style={styles.blackText}>Modal</Text>
         </Modal>
       </View>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#1f2937",
+    padding: 16,
+  },
+  redText: {
+    color: "#f87171",
+    textAlign: "center",
+  },
+  whiteText: {
+    color: "#ffffff",
+    textAlign: "center",
+  },
+  blackText: {
+    color: "#000000",
+    textAlign: "center",
+  },
+});
 
 export default BodyFrame;
