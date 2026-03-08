@@ -1,5 +1,4 @@
-import Navigation from "@/gui/Navigation";
-import FooterBar from "@/gui/FooterBar";
+import Navigation from "@/ui/Navigation";
 
 export default function AppLayout({
   children,
@@ -12,7 +11,6 @@ export default function AppLayout({
       <div className="flex-1 overflow-auto">
         {children}
       </div>
-      <FooterBar />
     </div>
   );
 }

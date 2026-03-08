@@ -1,8 +1,7 @@
 import React from "react";
 import { ScrollView, StyleSheet } from "react-native";
-import BodyFrame from '../gui/BodyFrame'
-import FooterBar from '../gui/FooterBar'
-import Navigation from '../gui/Navigation'
+import BodyFrame from '../ui/BodyFrame'
+import Navigation from '../ui/Navigation'
 import { SafeAreaView } from "react-native-safe-area-context";
  
 const App = () => {
@@ -15,9 +14,6 @@ const App = () => {
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         <BodyFrame style={{ flex: 1 }} />
       </ScrollView>
-
-      {/* Footer */}
-      <FooterBar />
     </SafeAreaView>
   );
 }

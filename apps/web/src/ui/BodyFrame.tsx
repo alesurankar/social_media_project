@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from 'next/navigation';
-import Button from "../../../../packages/components/Button"
-import Modal from "../../../../packages/components/Modal"
-import AuthForm from "../../../../packages/components/AuthForm"
+import Button from "../components/Button"
+import Modal from "../components/Modal"
+import AuthForm from "../components/AuthForm"
 
 interface BodyFrameProps {
   className?: string;
@@ -38,7 +38,7 @@ const BodyFrame: React.FC<BodyFrameProps> = ({ className }) => {
       {/* Modal */}
       {show && selectedType &&(
         <Modal onClose={() => setShow(false)} maxWidth="max-w-3xl">
-            <AuthForm onSuccess={() => setShow(false)}/>
+            <AuthForm onSuccess={() => setShow(false)} setUser={() => {}}/>
         </Modal>
       )}
       </div>
