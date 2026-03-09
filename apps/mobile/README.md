@@ -46,7 +46,8 @@ apps/mobile/
 │   └─ auth/
 │       ├─ LoginModal.tsx
 │       └─ RegisterModal.tsx
-└─ ui/
-    ├─ BodyFrame.tsx
-    └─ Navigation.tsx
+├─ ui/
+│   ├─ BodyFrame.tsx
+│   └─ Navigation.tsx
+└─ .env.local        # Base URL of backend API
  ```
