@@ -44,12 +44,18 @@
         margin-bottom: 1rem;
     }
     button {
-        background-color: #007bff;
-        color: white;
-        padding: 0.5rem 1rem;
-        border-radius: 0.25rem;
+        background-color: #4d5c75;
+        color: #381818;
         border: none;
         cursor: pointer;
+        transition: transform 0.1s, color 0.1s;
+    }
+    button:hover {
+        color: #a17272;
+    }
+
+    button:active {
+        transform: scale(0.9);
     }
     a {
         color: #1d4ed8;

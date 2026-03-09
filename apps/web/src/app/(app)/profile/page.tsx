@@ -3,18 +3,19 @@
 import { useRouter } from "next/navigation";
 
 
-export default function FeedPage() {
+const Profile = () => {
   const router = useRouter();
 
   return (
-    <div>
-      <h1>Feed Page</h1>
-      <p>feed page content.</p>
-      <button
-        className="px-14 py-6 bg-blue-500 text-white rounded"
+    <div className="flex flex-col items-center justify-center">
+      <h1 className="p-10">This is Profile Page</h1>
+      <button className="hover:text-black text-white py-4 px-8 mb-2 w-64 rounded"
         onClick={() => router.push("/")} 
-      >Back
+      >
+        Back
       </button> 
     </div>
   );
 }
+
+export default Profile;
