@@ -5,7 +5,7 @@ const RootLayout = () => {
         <Stack 
             screenOptions={{
                 headerStyle: {
-                    backgroundColor: '#ff8800'
+                    backgroundColor: '#4d5c75',
                 },
                 headerTintColor: '#ffffff',
                 headerTitleStyle: {
@@ -13,9 +13,7 @@ const RootLayout = () => {
                     fontWeight: 'bold',
                 },
                 contentStyle: {
-                    paddingHorizontal: 10,
-                    paddingTop: 10,
-                    backgroundColor: '#ffffff'
+                    backgroundColor: '#4d5c75'
                 }
             }}>
                 <Stack.Screen name='index' options={{title: 'Home'}} />

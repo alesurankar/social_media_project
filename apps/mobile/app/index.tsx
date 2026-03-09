@@ -7,7 +7,7 @@ const HomeScreen = () => {
   return (
     <View style={styles.container}>
       <Image 
-        source={require('../assets/images/image.png')} 
+        source={require('../assets/images/logo1.png')} 
         style={styles.image} 
       />
       <Text style={styles.title}>Welcome to Social Platform app</Text>
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   button: {
-    backgroundColor: '#007bff',
+    backgroundColor: '#4d5c75',
     paddingVertical: 12,
     paddingHorizontal: 25,
     borderRadius: 8,
