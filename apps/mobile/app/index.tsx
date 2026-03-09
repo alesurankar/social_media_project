@@ -1,25 +1,47 @@
 import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { useRouter } from 'expo-router';
-import App from './App'
 
 const HomeScreen = () => {
   const router = useRouter();
 
-  //return <App />
   return (
-    <View>
+    <View style={styles.container}>
       <Image 
         source={require('../assets/images/image.png')} 
         style={styles.image} 
       />
-      <Text style={styles.title}>Welcome to this app</Text>
-      <Text style={styles.subtitle}>take notes</Text>
+      <Text style={styles.title}>Welcome to Social Platform app</Text>
+      <Text style={styles.subtitle}>navigate</Text>
 
       <TouchableOpacity
         style={styles.button}
-        onPress={() => router.push('/notes')}
+        onPress={() => router.push('/create')}
       >
-        <Text style={styles.buttonText}>Get Started</Text>
+        <Text style={styles.buttonText}>Create</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => router.push('/explore')}
+      >
+        <Text style={styles.buttonText}>Explore</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => router.push('/feed')}
+      >
+        <Text style={styles.buttonText}>Feed</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => router.push('/notifications')}
+      >
+        <Text style={styles.buttonText}>Notifications</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => router.push('/profile')}
+      >
+        <Text style={styles.buttonText}>Profile</Text>
       </TouchableOpacity>
     </View>
   );
@@ -42,6 +64,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 28,
     fontWeight: 'bold',
+    textAlign: 'center',
     marginBottom: 10,
     color: '#333',
   },
@@ -57,6 +80,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 25,
     borderRadius: 8,
     alignItems: 'center',
+    width: '100%',
+    marginBottom: 10,
   },
   buttonText: {
     color: '#fff',
