@@ -1,6 +1,8 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import Image from "next/image";
+import { Logo1 } from "@packages/images";
 
 
 export default function LandingPage() {
@@ -8,10 +10,12 @@ export default function LandingPage() {
 
   return (
     <main className="flex flex-col items-center justify-center h-screen">
-      <img
-        src="/images/logo1.png"
+      <Image
+        src={Logo1}
         alt="Logo"
-        className="w-42 h-42 mb-4"
+        width={168}
+        height={168}
+        className="mb-4"
       />
       <h1>Welcome to Social Platform app</h1>
       <h2>navigate</h2>

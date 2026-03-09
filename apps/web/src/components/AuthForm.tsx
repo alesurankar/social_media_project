@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Button from "./Button";
-import api from "../../../../packages/utils/api"
+import { api } from "@packages/utils"
 
 export interface AuthFormProps {
   onSuccess: () => void;

@@ -27,11 +27,9 @@ social_media_project/
 │   ├─ mobile/     # Expo / React Native mobile app
 │   └─ desktop/    # Cef + React + Vite desktop app
 ├─ packages/       # shared components, hooks, utils
-│   └─ icons/
-│       ├─ svg/             # all the icons for visual
-│       ├─ Icon.native.tsx  # wrapper for mobile icon names
-│       ├─ Icon.tsx         # wrapper for web and desktop icon names
-│       └─ IconPaths.tsx    # path registry for SVG icons
+│   ├─ images/ 
+│   ├─ icons/
+│   └─ utils/
 └─ server/        # backend server
 ```
 
