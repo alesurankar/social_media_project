@@ -25,12 +25,27 @@ apps/web/
 ├─ public/
 └─ src/
    ├─ app/
-   │  ├─ App.tsx
+   │  ├─ (app)/
+   │  │   ├─ create/
+   │  │   │   └─ page.tsx
+   │  │   ├─ explore/
+   │  │   │   └─ page.tsx
+   │  │   ├─ feed/
+   │  │   │   └─ page.tsx
+   │  │   ├─ notifications/
+   │  │   │   └─ page.tsx
+   │  │   ├─ profile/
+   │  │   │   └─ page.tsx
+   │  │   └─ layout.tsx
    │  ├─ global.css
    │  ├─ layout.tsx
-   │  └─ page.tsx     # Entry point
-   └─ gui/
+   │  └─ page.tsx       # App entry
+   ├─ components/
+   ├─ Modal.tsx
+   │  └─ auth/
+   │     ├─ LoginModal.tsx
+   │     └─ RegisterModal.tsx
+   └─ ui/
       ├─ BodyFrame.tsx
-      ├─ FooterBar.tsx
       └─ Navigation.tsx
  ```

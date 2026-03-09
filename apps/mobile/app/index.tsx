@@ -5,7 +5,7 @@ import App from './App'
 const HomeScreen = () => {
   const router = useRouter();
 
-  return <App />
+  //return <App />
   return (
     <View>
       <Image 
