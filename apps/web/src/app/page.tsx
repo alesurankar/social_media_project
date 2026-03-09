@@ -20,6 +20,10 @@ export default function LandingPage() {
       <h1>Welcome to Social Platform app</h1>
       <h2>navigate</h2>
       <button className="hover:text-black text-white py-4 px-8 mb-2 w-64 rounded"
+        onClick={() => router.push("/test")} 
+      >Test
+      </button> 
+      <button className="hover:text-black text-white py-4 px-8 mb-2 w-64 rounded"
         onClick={() => router.push("/create")} 
       >Create
       </button> 

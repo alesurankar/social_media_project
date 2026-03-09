@@ -5,6 +5,7 @@
 
 import express from "express";
 import cors from "cors";
+import testRoutes from "./routes/testRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import cookieParser from "cookie-parser";
 
@@ -18,6 +19,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 // Routes
+app.use("/api/v1", testRoutes);
 app.use("/api/v1/users", userRoutes);
 
 // Health check
