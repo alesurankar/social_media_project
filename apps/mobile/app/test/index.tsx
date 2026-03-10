@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet } from "react-native";
 import { useEffect, useState } from "react";
-import { api } from "@packages/utils";
+import { api } from "../../lib/api";
 
 const Test = () => {
     const [feedMessage, setFeedMessage] = useState<string>("Loading...");

@@ -11,6 +11,6 @@ packages/
 │   ├─ png/   
 │   └─ index.ts   
 └─ utils/
-    ├─ api.ts            
+    ├─ createApiClient.ts            
     └─ index.ts 
 ```

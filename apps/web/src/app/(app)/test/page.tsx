@@ -2,19 +2,22 @@
 
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { api } from "@packages/utils";
+import { api } from "@/lib/api"
 
+type TestResponse = { message: string };
 
 const Test = () => {
   const router = useRouter();
   const [feedMessage, setFeedMessage] = useState<string>("Loading...");
 
   useEffect(() => {
-    // Test your API endpoint
     api
-      .get("/test")
-      .then((res) => setFeedMessage(res.data.message || "API OK"))
-      .catch((err) => setFeedMessage("API error: " + err.message));
+      .get<TestResponse>("/test")
+      .then((res: { data: TestResponse }) => setFeedMessage(res.data.message || "API OK"))
+      .catch((err: unknown) => {
+      const message = err instanceof Error ? err.message : "Unknown API error";
+      setFeedMessage("API error: " + message);
+    });
   }, []);
 
   return (
