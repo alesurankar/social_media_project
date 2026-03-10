@@ -1,14 +1,28 @@
 import { 
-    View, Text, StyleSheet, TouchableOpacity, Modal, TextInput
+    View, Text, StyleSheet, TouchableOpacity, Modal
 } from "react-native";
+import { ReactNode } from "react";
 
 
-type MyModalProps = {
+type BaseModalProps = {
   modalVisible: boolean;
   setModalVisible: (visible: boolean) => void;
+  title?: string;
+  onConfirm?: () => void;
+  closeText?: string;
+  confirmText?: string;
+  children?: ReactNode;
 };
 
-const MyModal = ({modalVisible,setModalVisible}: MyModalProps) => {
+const BaseModal = ({
+    modalVisible,
+    setModalVisible,
+    title = "Default Modal",
+    onConfirm,
+    closeText = "Close",
+    confirmText = "Confirm",
+    children,
+}: BaseModalProps) => {
 
     return ( 
         <Modal
@@ -19,21 +33,26 @@ const MyModal = ({modalVisible,setModalVisible}: MyModalProps) => {
         >
             <View style={styles.modalOverlay}>
                 <View style={styles.modalContent}>
-                    <Text style={styles.modalTitle}>My Text</Text>
-                    <TextInput 
-                        style={styles.input}
-                        placeholder='text placeholder'
-                        placeholderTextColor='#aaa'
-                    />
+                    
+                    <Text style={styles.modalTitle}>{title}</Text>
+
+                    {/* dynamic content */}
+                    {children}
 
                     <View style={styles.modalButtons}>
-                        <TouchableOpacity style={styles.cancelButton} onPress={ () => setModalVisible(false) }>
-                            <Text style={styles.cancelButtonText}>Cancel</Text>
+                        <TouchableOpacity 
+                            style={styles.closeButton} 
+                            onPress={ () => setModalVisible(false) }
+                        ><Text style={styles.closeButtonText}>{closeText}</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={styles.saveButton}>
-                            <Text style={styles.saveButtonText}>Confirm</Text>
-                        </TouchableOpacity>
+                        {onConfirm && (
+                            <TouchableOpacity 
+                                style={styles.confirmButton}
+                                onPress={onConfirm}
+                            ><Text style={styles.confirmButtonText}>{confirmText}</Text>
+                            </TouchableOpacity>
+                        )}
                     </View>
                 </View>
             </View>
@@ -72,7 +91,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
     },
-    cancelButton: {
+    closeButton: {
         backgroundColor: '#ccc',
         padding: 10,
         borderRadius: 5,
@@ -80,21 +99,21 @@ const styles = StyleSheet.create({
         marginRight: 10,
         alignItems: 'center',
     },
-    cancelButtonText: {
+    closeButtonText: {
         fontSize: 16,
         color: '#333',
     },
-    saveButton: {
+    confirmButton: {
         backgroundColor: '#4d5c75',
         padding: 10,
         borderRadius: 5,
         flex: 1,
         alignItems: 'center',
     },
-    saveButtonText: {
+    confirmButtonText: {
         fontSize: 16,
         color: '#ffffff'
     },
 });
 
-export default MyModal;
+export default BaseModal;

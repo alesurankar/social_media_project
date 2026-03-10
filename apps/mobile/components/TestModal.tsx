@@ -1,22 +1,23 @@
 
-import BaseModal from "../BaseModal";
+import BaseModal from "./BaseModal";
 
-type RegisterModalProps = {
+type TestModalProps = {
   modalVisible: boolean;
   setModalVisible: (visible: boolean) => void;
 };
 
-const RegisterModal = ({ modalVisible, setModalVisible }: RegisterModalProps) => {
+const TestModal = ({ modalVisible, setModalVisible }: TestModalProps) => {
 
 
   return (
     <BaseModal
       modalVisible={modalVisible}
       setModalVisible={setModalVisible}
+      title="Test Modal"
     >
      
     </BaseModal>
   );
 };
 
-export default RegisterModal;
+export default TestModal;
