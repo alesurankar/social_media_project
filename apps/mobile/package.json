@@ -18,6 +18,7 @@
     "nativewind": "^4.2.2",
     "react": "19.1.0",
     "react-native": "0.81.5",
+    "react-native-dotenv": "^3.4.11",
     "react-native-reanimated": "^4.2.2",
     "react-native-safe-area-context": "^5.6.2",
     "react-native-screens": "~4.16.0",
@@ -25,6 +26,7 @@
   },
   "devDependencies": {
     "@types/react": "~19.1.0",
+    "@types/react-native-dotenv": "^0.2.2",
     "babel-plugin-module-resolver": "^5.0.2",
     "babel-preset-expo": "^54.0.10",
     "prettier-plugin-tailwindcss": "^0.5.14",

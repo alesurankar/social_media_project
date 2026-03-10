@@ -51,5 +51,5 @@ apps/mobile/
 ├─ ui/
 │   ├─ BodyFrame.tsx
 │   └─ Navigation.tsx
-└─ .env.local        # Base URL of backend API
+└─ .env               # Base URL of backend API
  ```

@@ -1,9 +1,8 @@
 import { createApiClient } from "@packages/utils";
+import { API_URL } from "@env"
 
-const baseURL = process.env.API_URL;
-
-if (!baseURL) {
-  throw new Error("API_URL is not defined");
+if (!API_URL) {
+  throw new Error("API_URL is not defined in .env");
 }
 
-export const api = createApiClient(baseURL, false);
+export const api = createApiClient(API_URL, false);
