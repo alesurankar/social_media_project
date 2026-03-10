@@ -1,28 +1,15 @@
 import { 
-    View, 
-    Text, 
-    StyleSheet, 
-    TouchableOpacity,
-    Modal,
-    TextInput
+    View, Text, StyleSheet, TouchableOpacity, Modal, TextInput
 } from "react-native";
 
 
-type AddNoteModalProps = {
+type MyModalProps = {
   modalVisible: boolean;
   setModalVisible: (visible: boolean) => void;
-  newNote: string;
-  setNewNote: (text: string) => void;
-  addNote: () => void;
 };
 
-const AddNoteModal = ({
-  modalVisible,
-  setModalVisible,
-  newNote,
-  setNewNote,
-  addNote,
-}: AddNoteModalProps) => {
+const MyModal = ({modalVisible,setModalVisible}: MyModalProps) => {
+
     return ( 
         <Modal
             visible={modalVisible}
@@ -32,23 +19,21 @@ const AddNoteModal = ({
         >
             <View style={styles.modalOverlay}>
                 <View style={styles.modalContent}>
-                    <Text style={styles.modalTitle}>Add a New Note</Text>
+                    <Text style={styles.modalTitle}>My Text</Text>
                     <TextInput 
                         style={styles.input}
-                        placeholder='Enter note...'
+                        placeholder='text placeholder'
                         placeholderTextColor='#aaa'
-                        value={newNote}
-                        onChangeText={setNewNote}
                     />
+
                     <View style={styles.modalButtons}>
                         <TouchableOpacity style={styles.cancelButton} onPress={ () => setModalVisible(false) }>
                             <Text style={styles.cancelButtonText}>Cancel</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={styles.saveButton} onPress={ addNote }>
-                            <Text style={styles.saveButtonText}>Save</Text>
+                        <TouchableOpacity style={styles.saveButton}>
+                            <Text style={styles.saveButtonText}>Confirm</Text>
                         </TouchableOpacity>
-
                     </View>
                 </View>
             </View>
@@ -100,7 +85,7 @@ const styles = StyleSheet.create({
         color: '#333',
     },
     saveButton: {
-        backgroundColor: '#007bff',
+        backgroundColor: '#4d5c75',
         padding: 10,
         borderRadius: 5,
         flex: 1,
@@ -112,4 +97,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default AddNoteModal;
+export default MyModal;

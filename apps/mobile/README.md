@@ -42,7 +42,7 @@ apps/mobile/
 │   └─ index.tsx     # App Entry
 ├─ assets/
 ├─ components/
-│   ├─ Modal.tsx
+│   ├─ MyModal.tsx
 │   └─ auth/
 │       ├─ LoginModal.tsx
 │       └─ RegisterModal.tsx
