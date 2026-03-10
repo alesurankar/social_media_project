@@ -28,8 +28,7 @@ const Test = () => {
       <button
         className="hover:text-black text-white py-4 px-8 mb-2 w-64 rounded"
         onClick={() => router.push("/")}
-      >
-        Back
+      >Back
       </button>
     </div>
   );

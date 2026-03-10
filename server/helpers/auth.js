@@ -5,27 +5,27 @@ import asyncErrorHandler from "./asyncErrorHandler.js";
 
 
 export const isAuthenticatedUser = asyncErrorHandler(async (req, res, next) => {
-    // //  DEV-ONLY AUTH BYPASS
-    // if (
-    //     process.env.NODE_ENV === "development" &&
-    //     process.env.SKIP_AUTH === "true"
-    // ) {
-    //     req.user = {
-    //         _id: "64f000000000000000000001",
-    //         name: "Dev User",
-    //         role: "admin",
-    //     };
-    //     return next();
-    // }
+  // //  DEV-ONLY AUTH BYPASS
+  // if (
+  //     process.env.NODE_ENV === "development" &&
+  //     process.env.SKIP_AUTH === "true"
+  // ) {
+  //     req.user = {
+  //         _id: "64f000000000000000000001",
+  //         name: "Dev User",
+  //         role: "admin",
+  //     };
+  //     return next();
+  // }
 
-    // NORMAL AUTH FLOW (PRODUCTION)
-    const { token } = req.cookies;
+  // NORMAL AUTH FLOW (PRODUCTION)
+  const { token } = req.cookies;
 
-    if (!token) {
-        return next(new ErrorHandler("Please Login to Access", 401))
-    }
+  if (!token) {
+    return next(new ErrorHandler("Please Login to Access", 401))
+  }
 
-    const decodedData = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = await User.findById(decodedData.id);
-    next();
+  const decodedData = jwt.verify(token, process.env.JWT_SECRET);
+  req.user = await User.findById(decodedData.id);
+  next();
 });

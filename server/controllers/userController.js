@@ -15,21 +15,21 @@ import sendToken from "../helpers/sendToken.js";
  * @access Public
  */
 export const registerUser = asyncErrorHandler(async (req, res, next) => {
-    console.log("🔥 registerUser triggered");
+  console.log("🔥 registerUser triggered");
 
-    const { username, email, password } = req.body;
+  const { username, email, password } = req.body;
 
-    const existingUser = await User.findOne({ email });
-    if (existingUser) {
-        return res.status(400).json({ message: "User already exists" });
-    }
+  const existingUser = await User.findOne({ email });
+  if (existingUser) {
+    return res.status(400).json({ message: "User already exists" });
+  }
 
-    const user = await User.create ({
-        username,
-        email,     
-        password,
-    });
-    sendToken(user, 201, res);
+  const user = await User.create ({
+    username,
+    email,     
+    password,
+  });
+  sendToken(user, 201, res);
 });
 
 
@@ -39,21 +39,21 @@ export const registerUser = asyncErrorHandler(async (req, res, next) => {
  * @access Public
  */
 export const loginUser = asyncErrorHandler(async (req, res, next) => {
-    console.log("🔥 loginUser triggered");
+  console.log("🔥 loginUser triggered");
 
-    const { email, password } = req.body;
-    
-    const user = await User.findOne({ email }).select("+password");
-    if (!user) {
-        return res.status(401).json({ message: "Invalid email or password" });
-    }
+  const { email, password } = req.body;
+  
+  const user = await User.findOne({ email }).select("+password");
+  if (!user) {
+    return res.status(401).json({ message: "Invalid email or password" });
+  }
 
-    const isPasswordMatched = await user.comparePassword(password);
-    if (!isPasswordMatched) {
-        return res.status(401).json({ message: "Invalid email or password" });
-    }
+  const isPasswordMatched = await user.comparePassword(password);
+  if (!isPasswordMatched) {
+    return res.status(401).json({ message: "Invalid email or password" });
+  }
 
-    sendToken(user, 200, res);
+  sendToken(user, 200, res);
 });
 
 
@@ -64,25 +64,25 @@ export const loginUser = asyncErrorHandler(async (req, res, next) => {
  * @access Private
  */
 export const logoutUser = asyncErrorHandler(async (req, res, next) => {
-    // Clear the token cookie by setting it to null with immediate expiry
-    res.cookie("token", null, {
-        expires: new Date(Date.now()),
-        httpOnly: true,
-    });
+  // Clear the token cookie by setting it to null with immediate expiry
+  res.cookie("token", null, {
+    expires: new Date(Date.now()),
+    httpOnly: true,
+  });
 
-    res.status(200).json({
-        success: true,
-        message: "Logged Out",
-    });
+  res.status(200).json({
+    success: true,
+    message: "Logged Out",
+  });
 });
 
 
 // Get User Details
 export const getUserDetails = asyncErrorHandler(async (req, res, next) => {
-    res.status(200).json({
-        success: true,
-        user: req.user,
-    });
+  res.status(200).json({
+    success: true,
+    user: req.user,
+  });
 });
 
 // /**

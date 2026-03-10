@@ -4,16 +4,16 @@ import Navigation from '../../ui/Navigation'
 
 
 const ExploreLayout = () => {
-    return (
-        <View style={styles.container}>
-            <Navigation />
-            <Stack 
-                screenOptions={{
-                    headerShown: false,
-                }}
-            />
-        </View>
-    )
+  return (
+    <View style={styles.container}>
+      <Navigation />
+      <Stack 
+        screenOptions={{
+          headerShown: false,
+        }}
+      />
+    </View>
+  )
 }
 
 const styles = StyleSheet.create({
