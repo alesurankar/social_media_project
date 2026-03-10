@@ -21,7 +21,7 @@ const RegisterModal = ({ modalVisible, setModalVisible }: RegisterModalProps) =>
     <BaseModal
       modalVisible={modalVisible}
       setModalVisible={setModalVisible}
-      title="Register"
+      title="Registration"
       closeText="Cancel"
       confirmText="Register"
       onConfirm={handleRegistration}

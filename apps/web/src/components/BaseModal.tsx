@@ -14,13 +14,13 @@ type BaseModalProps = {
 };
 
 const BaseModal = ({
-    modalVisible,
-    setModalVisible,
-    title = "Default Modal",
-    onConfirm,
-    closeText = "Close",
-    confirmText = "Confirm",
-    children,
+  modalVisible,
+  setModalVisible,
+  title = "Default Modal",
+  onConfirm,
+  closeText = "Close",
+  confirmText = "Confirm",
+  children,
 }: BaseModalProps) => {
   if (!modalVisible) return null;
 

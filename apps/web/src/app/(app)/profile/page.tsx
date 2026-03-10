@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import LoginModal from "../../../components/auth/LoginModal"
+import RegisterModal from "../../../components/auth/RegisterModal"
 
 
 const Profile = () => {
@@ -26,7 +27,7 @@ const Profile = () => {
       </button> 
 
       {/* Modal */}
-      <LoginModal 
+      <RegisterModal 
         modalVisible={loginOpen} 
         setModalVisible={setLoginOpen} 
       />
