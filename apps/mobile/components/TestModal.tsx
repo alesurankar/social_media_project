@@ -1,4 +1,3 @@
-
 import BaseModal from "./BaseModal";
 
 type TestModalProps = {
@@ -7,7 +6,6 @@ type TestModalProps = {
 };
 
 const TestModal = ({ modalVisible, setModalVisible }: TestModalProps) => {
-
 
   return (
     <BaseModal
