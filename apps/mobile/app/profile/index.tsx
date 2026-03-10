@@ -1,8 +1,7 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { useState } from 'react';
 import LoginModal from '../../components/auth/LoginModal';
-import RegisterModal from '../../components/auth/RegisterModal';
-import TestModal from '../../components/TestModal';
+
 
 const Profile = () => {
     const [modalVisible, setModalVisible] = useState(false);
@@ -12,9 +11,10 @@ const Profile = () => {
         <View style={styles.container}>
             <Text>This is Profile Page</Text>
 
-            <TouchableOpacity style={styles.addButton} onPress={ () => 
-                setModalVisible(true) }>
-                <Text style={styles.addButtonText}>Open Modal</Text>
+            <TouchableOpacity 
+                style={styles.addButton} 
+                onPress={ () => setModalVisible(true) }
+            ><Text style={styles.addButtonText}>Open Modal</Text>
             </TouchableOpacity>
 
             {/* Modal */}
@@ -22,7 +22,6 @@ const Profile = () => {
                 modalVisible={modalVisible}
                 setModalVisible={setModalVisible}
             />
-
         </View> 
     );
 };

@@ -2,6 +2,7 @@ import { View, TextInput, StyleSheet } from "react-native";
 import { useState } from "react";
 import BaseModal from "../BaseModal";
 
+
 type LoginModalProps = {
   modalVisible: boolean;
   setModalVisible: (visible: boolean) => void;
@@ -12,7 +13,8 @@ const LoginModal = ({ modalVisible, setModalVisible }: LoginModalProps) => {
   const [password, setPassword] = useState("");
 
   const handleLogin = () => {
-    console.log(email, password);
+    console.log("Email:", email, "Password:", password);
+    // TODO: call Login logic
   };
 
   return (
