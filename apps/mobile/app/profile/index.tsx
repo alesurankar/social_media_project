@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { useState } from 'react';
 import LoginModal from '../../components/auth/LoginModal';
+import RegisterModal from '../../components/auth/RegisterModal';
 
 
 const Profile = () => {
@@ -18,7 +19,7 @@ const Profile = () => {
             </TouchableOpacity>
 
             {/* Modal */}
-            <LoginModal 
+            <RegisterModal 
                 modalVisible={modalVisible}
                 setModalVisible={setModalVisible}
             />

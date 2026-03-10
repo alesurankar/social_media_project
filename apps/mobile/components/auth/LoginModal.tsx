@@ -13,7 +13,7 @@ const LoginModal = ({ modalVisible, setModalVisible }: LoginModalProps) => {
   const [password, setPassword] = useState("");
 
   const handleLogin = () => {
-    console.log("Email:", email, "Password:", password);
+    console.log("Email: ", email, "Password: ", password);
     // TODO: call Login logic
   };
 
