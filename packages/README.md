@@ -11,6 +11,6 @@ packages/
 │   ├─ png/   
 │   └─ index.ts   
 └─ utils/
-    ├─ createApiClient.ts            
-    └─ index.ts 
+    ├─ createApiClient.ts   # shared typed axios client    
+    └─ index.ts             # re-exports createApiClient
 ```

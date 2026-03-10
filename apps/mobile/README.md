@@ -47,7 +47,7 @@ apps/mobile/
 │       ├─ LoginModal.tsx
 │       └─ RegisterModal.tsx
 ├─ lib/
-│   └─ api.ts
+│   └─ api.ts         # imports { createApiClient } from packages
 ├─ ui/
 │   ├─ BodyFrame.tsx
 │   └─ Navigation.tsx
