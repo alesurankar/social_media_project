@@ -1,5 +1,7 @@
 import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { useRouter } from 'expo-router';
+import { Logo1 } from "@packages/images";
+
 
 const HomeScreen = () => {
   const router = useRouter();
@@ -7,7 +9,7 @@ const HomeScreen = () => {
   return (
     <View style={styles.container}>
       <Image 
-        source={require('../assets/images/logo1.png')} 
+        source={Logo1}
         style={styles.image} 
       />
       <Text style={styles.title}>Welcome to Social Platform app</Text>
