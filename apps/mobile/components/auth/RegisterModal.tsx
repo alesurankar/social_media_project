@@ -26,7 +26,7 @@ const RegisterModal = ({ modalVisible, setModalVisible }: RegisterModalProps) =>
       setTimeout(() => router.push("/feed"), 300);
     }
     else {
-      alert("Register failed.");
+      alert("Registration failed.");
     }
   }
 

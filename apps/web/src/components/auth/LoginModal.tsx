@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import BaseModal from "../BaseModal";
 
@@ -10,12 +11,23 @@ type LoginModalProps = {
 };
 
 const LoginModal = ({ modalVisible, setModalVisible }: LoginModalProps) => {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleLogin = () => {
     console.log("Email: ", email, "Password: ", password);
-    // TODO: call Login logic
+
+    // TODO: Replace this with real login logic
+    const loginSuccess = true;
+
+    if (loginSuccess) {
+      setModalVisible(false);
+      setTimeout(() => router.push("/feed"), 300)
+    }
+    else {
+      alert("Login failed, Please check yur credentials")
+    }
   };
 
   return (
