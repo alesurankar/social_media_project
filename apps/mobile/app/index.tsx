@@ -1,10 +1,15 @@
 import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { useRouter } from 'expo-router';
 import { Logo1 } from "@packages/images";
+import LoginModal from '../components/auth/LoginModal';
+import RegisterModal from '../components/auth/RegisterModal';
+import { useState } from 'react';
 
 
 const HomeScreen = () => {
   const router = useRouter();
+    const [loginOpen, setLoginOpen] = useState(false);
+    const [registerOpen, setRegisterOpen] = useState(false);
 
   return (
     <View style={styles.container}>
@@ -17,40 +22,55 @@ const HomeScreen = () => {
 
       <TouchableOpacity
         style={styles.button}
-        onPress={() => router.push('/test')}
-      >
-        <Text style={styles.buttonText}>Test</Text>
+        onPress={ () => setLoginOpen(true) }
+      ><Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
+
       <TouchableOpacity
         style={styles.button}
-        onPress={() => router.push('/create')}
-      >
-        <Text style={styles.buttonText}>Create</Text>
+        onPress={ () => setRegisterOpen(true) }
+      ><Text style={styles.buttonText}>Sign up</Text>
       </TouchableOpacity>
+      
+      {/* <TouchableOpacity
+        style={styles.button}
+        onPress={() => router.push('/create')}
+      ><Text style={styles.buttonText}>Create</Text>
+      </TouchableOpacity>
+      
       <TouchableOpacity
         style={styles.button}
         onPress={() => router.push('/explore')}
-      >
-        <Text style={styles.buttonText}>Explore</Text>
+      ><Text style={styles.buttonText}>Explore</Text>
       </TouchableOpacity>
+
       <TouchableOpacity
         style={styles.button}
         onPress={() => router.push('/feed')}
-      >
-        <Text style={styles.buttonText}>Feed</Text>
+      ><Text style={styles.buttonText}>Feed</Text>
       </TouchableOpacity>
+
       <TouchableOpacity
         style={styles.button}
         onPress={() => router.push('/notifications')}
-      >
-        <Text style={styles.buttonText}>Notifications</Text>
-      </TouchableOpacity>
+      ><Text style={styles.buttonText}>Notifications</Text>
+      </TouchableOpacity> */}
+
       <TouchableOpacity
         style={styles.button}
         onPress={() => router.push('/profile')}
-      >
-        <Text style={styles.buttonText}>Profile</Text>
+      ><Text style={styles.buttonText}>Profile</Text>
       </TouchableOpacity>
+
+      {/* Modal */}
+      <LoginModal 
+        modalVisible={loginOpen}
+        setModalVisible={setLoginOpen}
+      />
+      <RegisterModal 
+        modalVisible={registerOpen}
+        setModalVisible={setRegisterOpen}
+      />
     </View>
   );
 }
@@ -74,13 +94,14 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     marginBottom: 10,
-    color: '#333',
+    color: '#000000',
   },
   subtitle: {
-    fontSize: 16,
-    color: '#666',
+    fontSize: 22,
+    fontWeight: 'bold',
     textAlign: 'center',
-    marginBottom: 20,
+    marginBottom: 100,
+    color: '#000000',
   },
   button: {
     backgroundColor: '#4d5c75',
