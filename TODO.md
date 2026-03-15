@@ -6,5 +6,4 @@ last updated: 15.3.2026
 ## Tasks
 
 - [ ] desktop implement app
-- [ ] web add navigation logic to navigation component
-- [ ] mobile add navigation logic to navigation component
+- [ ] extract identical code from mobile and web to make reusable components

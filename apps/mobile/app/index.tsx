@@ -37,30 +37,6 @@ const HomeScreen = () => {
         onPress={() => router.push('/create')}
       ><Text style={styles.buttonText}>Create</Text>
       </TouchableOpacity>
-      
-      {/* <TouchableOpacity
-        style={styles.button}
-        onPress={() => router.push('/explore')}
-      ><Text style={styles.buttonText}>Explore</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => router.push('/feed')}
-      ><Text style={styles.buttonText}>Feed</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => router.push('/notifications')}
-      ><Text style={styles.buttonText}>Notifications</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => router.push('/profile')}
-      ><Text style={styles.buttonText}>Profile</Text>
-      </TouchableOpacity> */}
 
       {/* Modal */}
       <LoginModal 

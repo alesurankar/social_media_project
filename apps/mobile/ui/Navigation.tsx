@@ -1,26 +1,15 @@
 import { useRouter } from "expo-router";
 import { View, StyleSheet, Pressable } from "react-native";
 import Icon from "../../../packages/icons/Icon.native";
-import type { IconName } from "../../../packages/icons/IconPaths";
+import { navigationIcons } from "../../../packages/icons/navigationIcons";
 
-
-const icons: { name: IconName; route: string }[] = [
-  { name: "bars_4", route: "/profile" },
-  { name: "globe", route: "/profile" },
-  { name: "bell", route: "/profile" },
-  { name: "chat_bubble_left_right", route: "/profile" },
-  { name: "users", route: "/profile"  },
-  { name: "chevron_down", route: "/profile" },
-  { name: "bars_3", route: "/profile" },
-  { name: "arrow_right_end_rectangle", route: "/" },
-];
 
 const Navigation = () => {
   const router = useRouter();
 
   return (
     <View style={styles.container}>
-      {icons.map((item) => (
+      {navigationIcons.map((item) => (
         <Pressable 
           key={item.name}
           onPress={() => router.push(item.route)}

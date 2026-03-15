@@ -52,26 +52,6 @@ export default function LandingPage() {
         modalVisible={registerOpen} 
         setModalVisible={setRegisterOpen} 
       />
-      {/* <button className="hover:text-black text-white py-4 px-8 mb-2 w-64 rounded"
-        onClick={() => router.push("/create")} 
-      >Create
-      </button> 
-      <button className="hover:text-black text-white py-4 px-8 mb-2 w-64 rounded"
-        onClick={() => router.push("/explore")} 
-      >Explore
-      </button> 
-      <button className="hover:text-black text-white py-4 px-8 mb-2 w-64 rounded"
-        onClick={() => router.push("/feed")} 
-      >Feed
-      </button> 
-      <button className="hover:text-black text-white py-4 px-8 mb-2 w-64 rounded"
-        onClick={() => router.push("/notifications")} 
-      >Notifications
-      </button>
-      <button className="hover:text-black text-white py-4 px-8 mb-2 w-64 rounded"
-        onClick={() => router.push("/profile")} 
-      >Profile
-      </button> */}
     </main>
   );
 }
