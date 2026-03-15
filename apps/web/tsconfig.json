@@ -20,6 +20,7 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
+      "@packages/icons": ["../../packages/icons"],
       "@packages/images": ["../../packages/images"],
       "@packages/utils": ["../../packages/utils"],
     }
