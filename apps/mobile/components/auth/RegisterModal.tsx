@@ -1,6 +1,8 @@
-import { View, TextInput, StyleSheet } from "react-native";
+import { useRouter } from 'expo-router';
 import { useState } from "react";
+import { View, TextInput, StyleSheet } from "react-native";
 import BaseModal from "../BaseModal";
+
 
 type RegisterModalProps = {
   modalVisible: boolean;
@@ -8,13 +10,24 @@ type RegisterModalProps = {
 };
 
 const RegisterModal = ({ modalVisible, setModalVisible }: RegisterModalProps) => {
+  const router = useRouter();
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleRegistration = () => {
     console.log("Username: ", username, "Email: ", email, "Password: ", password);
-    // TODO: call Registration logic
+    
+    // TODO: Replace this with real register logic
+    const registerSuccess = true;
+
+    if (registerSuccess) {
+      setModalVisible(false);
+      setTimeout(() => router.push("/feed"), 300);
+    }
+    else {
+      alert("Register failed.");
+    }
   }
 
   return (

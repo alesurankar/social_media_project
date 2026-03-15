@@ -1,5 +1,6 @@
-import { View, TextInput, StyleSheet } from "react-native";
+import { useRouter } from 'expo-router';
 import { useState } from "react";
+import { View, TextInput, StyleSheet } from "react-native";
 import BaseModal from "../BaseModal";
 
 
@@ -9,12 +10,23 @@ type LoginModalProps = {
 };
 
 const LoginModal = ({ modalVisible, setModalVisible }: LoginModalProps) => {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleLogin = () => {
     console.log("Email: ", email, "Password: ", password);
-    // TODO: call Login logic
+    
+    // TODO: Replace this with real login logic
+    const loginSuccess = true;
+
+    if (loginSuccess) {
+      setModalVisible(false);
+      setTimeout(() => router.push("/feed"), 300);
+    }
+    else {
+      alert("Login failed. Please check your credentials.");
+    }
   };
 
   return (
