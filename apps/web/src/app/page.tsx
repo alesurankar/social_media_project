@@ -1,12 +1,17 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 import Image from "next/image";
 import { Logo1 } from "@packages/images";
+import LoginModal from "../components/auth/LoginModal"
+import RegisterModal from "../components/auth/RegisterModal"
 
 
 export default function LandingPage() {
   const router = useRouter();
+  const [loginOpen, setLoginOpen] = useState(false);
+  const [registerOpen, setRegisterOpen] = useState(false);
 
   return (
     <main className="flex flex-col items-center justify-center h-screen">
@@ -20,10 +25,24 @@ export default function LandingPage() {
       <h1>Welcome to Social Platform app</h1>
       <h2>navigate</h2>
       <button className="hover:text-black text-white py-4 px-8 mb-2 w-64 rounded"
-        onClick={() => router.push("/test")} 
-      >Test
+        onClick={() => setLoginOpen(true)}
+      >Login
       </button> 
       <button className="hover:text-black text-white py-4 px-8 mb-2 w-64 rounded"
+        onClick={() => setRegisterOpen(true)}
+      >Sign up
+      </button> 
+
+      {/* Modal */}
+      <LoginModal 
+        modalVisible={loginOpen} 
+        setModalVisible={setLoginOpen} 
+      />
+      <RegisterModal 
+        modalVisible={registerOpen} 
+        setModalVisible={setRegisterOpen} 
+      />
+      {/* <button className="hover:text-black text-white py-4 px-8 mb-2 w-64 rounded"
         onClick={() => router.push("/create")} 
       >Create
       </button> 
@@ -38,11 +57,11 @@ export default function LandingPage() {
       <button className="hover:text-black text-white py-4 px-8 mb-2 w-64 rounded"
         onClick={() => router.push("/notifications")} 
       >Notifications
-      </button> 
+      </button>   */}
       <button className="hover:text-black text-white py-4 px-8 mb-2 w-64 rounded"
         onClick={() => router.push("/profile")} 
       >Profile
-      </button> 
+      </button>
     </main>
   );
 }
