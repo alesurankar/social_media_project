@@ -5,14 +5,14 @@ import type { IconName } from "../../../packages/icons/IconPaths";
 
 
 const icons: { name: IconName; route: string }[] = [
-  { name: "bars_4", route: "/" },
-  { name: "globe", route: "/" },
-  { name: "bell", route: "/"  },
-  { name: "chat_bubble_left_right", route: "/"  },
-  { name: "users", route: "/"  },
-  { name: "arrow_right_end_rectangle", route: "/"  },
-  { name: "chevron_down", route: "/"  },
-  { name: "bars_3", route: "/"  },
+  { name: "bars_4", route: "/profile" },
+  { name: "globe", route: "/profile" },
+  { name: "bell", route: "/profile" },
+  { name: "chat_bubble_left_right", route: "/profile" },
+  { name: "users", route: "/profile"  },
+  { name: "chevron_down", route: "/profile" },
+  { name: "bars_3", route: "/profile" },
+  { name: "arrow_right_end_rectangle", route: "/" },
 ];
 
 const Navigation = () => {
