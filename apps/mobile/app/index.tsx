@@ -32,13 +32,13 @@ const HomeScreen = () => {
       ><Text style={styles.buttonText}>Sign up</Text>
       </TouchableOpacity>
       
-      {/* <TouchableOpacity
+      <TouchableOpacity
         style={styles.button}
         onPress={() => router.push('/create')}
       ><Text style={styles.buttonText}>Create</Text>
       </TouchableOpacity>
       
-      <TouchableOpacity
+      {/* <TouchableOpacity
         style={styles.button}
         onPress={() => router.push('/explore')}
       ><Text style={styles.buttonText}>Explore</Text>
@@ -54,13 +54,13 @@ const HomeScreen = () => {
         style={styles.button}
         onPress={() => router.push('/notifications')}
       ><Text style={styles.buttonText}>Notifications</Text>
-      </TouchableOpacity> */}
+      </TouchableOpacity>
 
       <TouchableOpacity
         style={styles.button}
         onPress={() => router.push('/profile')}
       ><Text style={styles.buttonText}>Profile</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
 
       {/* Modal */}
       <LoginModal 

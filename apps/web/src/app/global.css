@@ -55,7 +55,7 @@
   }
 
   button:active {
-    transform: scale(0.9); 
+    transform: scale(0.85); 
   }
   a {
     color: #1d4ed8;
