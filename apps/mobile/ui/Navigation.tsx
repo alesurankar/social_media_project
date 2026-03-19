@@ -17,7 +17,7 @@ const Navigation = () => {
               router.dismissAll();
             } 
             else {
-              router.push(item.route);
+              router.replace(item.route);
             }
           }}
           style={({ pressed }) => [

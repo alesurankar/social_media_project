@@ -49,11 +49,8 @@
     border: none;
     cursor: pointer;
     transition: transform 0.1s, color 0.1s;
+    border-radius: 10;
   }
-  button:hover {
-    color: #a17272;
-  }
-
   button:active {
     transform: scale(0.85); 
   }
