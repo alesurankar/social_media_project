@@ -12,16 +12,35 @@ const Navigation = () => {
     <View style={styles.container}>
 
       {navigationIcons.map((item) => {
-        const isActive = pathname == item.route;
+        const isActive = item.route ? pathname === item.route : false;
+        const handleAction = (type?: string) => {
+          switch (type) {
+            case "dropdown":
+              // TODO open dropdown
+              console.log("TODO open dropdown")
+              break;
+            case "search":
+              // TODO open search modal
+              console.log("TODO open search modal")
+              break;
+            case "logout":
+              // TODO logout logic
+              console.log("TODO logout logic")
+                router.dismissAll();
+              break;
+            default:
+              break;
+          }
+        };
 
         return(
           <Pressable 
             key={item.name}
             onPress={() => {
-              if (item.reset) {
-                router.dismissAll();
-              } 
-              else {
+              if (item.actionType) {
+                handleAction(item.actionType);
+              }
+              if (item.route) {
                 router.push(item.route);
               }
             }}
