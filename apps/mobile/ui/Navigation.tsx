@@ -1,15 +1,24 @@
 import { useRouter, usePathname } from "expo-router";
 import { View, StyleSheet, Pressable } from "react-native";
+import { useState } from "react";
 import Icon from "../../../packages/icons/Icon.native";
 import { navigationIcons } from "../../../packages/icons/navigationIcons";
+import TestModal from "components/TestModal";
 
 
 const Navigation = () => {
   const router = useRouter();
   const pathname = usePathname();
+  const [searchOpen, setSearchOpen] = useState(false);
 
   return (
     <View style={styles.container}>
+
+      {/* Modal */}
+      <TestModal 
+        modalVisible={searchOpen}
+        setModalVisible={setSearchOpen}
+      />
 
       {navigationIcons.map((item) => {
         const isActive = item.route ? pathname === item.route : false;
@@ -21,7 +30,7 @@ const Navigation = () => {
               break;
             case "search":
               // TODO open search modal
-              console.log("TODO open search modal")
+              setSearchOpen(true);
               break;
             case "logout":
               // TODO logout logic
