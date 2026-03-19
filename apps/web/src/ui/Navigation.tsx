@@ -4,7 +4,7 @@ import { useRouter, usePathname } from "next/navigation";
 import { useState } from "react";
 import Icon from "../../../../packages/icons/Icon";
 import { navigationIcons } from "../../../../packages/icons/navigationIcons";
-import TestModal from "@/components/TestModal";
+import TestModal from "@/components/modal/TestModal";
 
 
 const Navigation = () => {

@@ -1,8 +1,8 @@
 import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { useRouter } from 'expo-router';
 import { Logo1 } from "@packages/images";
-import LoginModal from '../components/auth/LoginModal';
-import RegisterModal from '../components/auth/RegisterModal';
+import LoginModal from '@/components/modal/auth/LoginModal';
+import RegisterModal from '@/components/modal/auth/RegisterModal';
 import { useState } from 'react';
 
 

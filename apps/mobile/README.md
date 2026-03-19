@@ -39,10 +39,13 @@ apps/mobile/
 │   └─ index.tsx     # App Entry
 ├─ assets/
 ├─ components/
-│   ├─ MyModal.tsx
-│   └─ auth/
-│       ├─ LoginModal.tsx
-│       └─ RegisterModal.tsx
+│   ├─ dropdown/
+│   │  └─ BaseDropdown.tsx
+│   └─ modal/
+│      ├─ auth/
+│      │  ├─ LoginModal.tsx
+│      │  └─ RegisterModal.tsx
+│      └─ BaseModal.tsx
 ├─ lib/
 │   └─ api.ts         # imports { createApiClient } from packages
 ├─ ui/

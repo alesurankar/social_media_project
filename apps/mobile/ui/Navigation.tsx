@@ -3,7 +3,7 @@ import { View, StyleSheet, Pressable } from "react-native";
 import { useState } from "react";
 import Icon from "../../../packages/icons/Icon.native";
 import { navigationIcons } from "../../../packages/icons/navigationIcons";
-import TestModal from "components/TestModal";
+import TestModal from "@/components/modal/TestModal";
 
 
 const Navigation = () => {

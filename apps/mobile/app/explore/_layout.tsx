@@ -1,6 +1,6 @@
 import { View, StyleSheet } from "react-native";
 import { Stack } from "expo-router";
-import Navigation from '../../ui/Navigation'
+import Navigation from '@/ui/Navigation'
 
 
 const ExploreLayout = () => {

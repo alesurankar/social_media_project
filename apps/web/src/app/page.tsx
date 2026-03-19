@@ -4,8 +4,8 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Image from "next/image";
 import { Logo1 } from "@packages/images";
-import LoginModal from "../components/auth/LoginModal"
-import RegisterModal from "../components/auth/RegisterModal"
+import LoginModal from "@/components/modal/auth/LoginModal"
+import RegisterModal from "@/components/modal/auth/RegisterModal"
 
 
 export default function LandingPage() {
