@@ -13,7 +13,14 @@ const Navigation = () => {
       {navigationIcons.map((item) => (
         <button 
           key={item.name}
-          onClick={() => router.push(item.route)}
+          onClick={() => {
+            if (item.reset) {
+              router.replace(item.route)
+            } 
+            else {
+              router.push(item.route);
+            }
+          }}
           ><Icon name={item.name} size={36}/>
         </button>
       ))}

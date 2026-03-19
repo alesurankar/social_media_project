@@ -1,10 +1,10 @@
 import { View, Text, StyleSheet } from "react-native";
 
-const Feed = () => {
+const Home = () => {
 
   return (
     <View style={styles.container}>
-      <Text>This is Feed Page</Text>
+      <Text>This is Home Page</Text>
     </View> 
   );
 };
@@ -17,4 +17,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Feed;
+export default Home;

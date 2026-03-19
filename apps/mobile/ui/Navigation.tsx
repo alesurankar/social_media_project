@@ -12,7 +12,14 @@ const Navigation = () => {
       {navigationIcons.map((item) => (
         <Pressable 
           key={item.name}
-          onPress={() => router.push(item.route)}
+          onPress={() => {
+            if (item.reset) {
+              router.dismissAll();
+            } 
+            else {
+              router.push(item.route);
+            }
+          }}
           style={({ pressed }) => [
             styles.icon, 
             { transform: [{ scale: pressed ? 0.85 : 1 }] }

@@ -34,8 +34,8 @@ const HomeScreen = () => {
       
       <TouchableOpacity
         style={styles.button}
-        onPress={() => router.push('/create')}
-      ><Text style={styles.buttonText}>Create</Text>
+        onPress={() => router.push('/test')}
+      ><Text style={styles.buttonText}>Test</Text>
       </TouchableOpacity>
 
       {/* Modal */}

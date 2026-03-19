@@ -23,13 +23,10 @@ pnpm run dev:mobile   # start the mobile app (Expo) and get the QR code
 ```text
 apps/mobile/
 ├─ app/
-│   ├─ create/
-│   │   ├─ _layout.tsx
-│   │   └─ index.tsx
 │   ├─ explore/
 │   │   ├─ _layout.tsx
 │   │   └─ index.tsx
-│   ├─ feed/
+│   ├─ home/
 │   │   ├─ _layout.tsx
 │   │   └─ index.tsx
 │   ├─ notifications/
