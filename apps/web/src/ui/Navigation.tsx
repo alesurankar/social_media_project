@@ -5,12 +5,14 @@ import { useState } from "react";
 import Icon from "../../../../packages/icons/Icon";
 import { navigationIcons } from "../../../../packages/icons/navigationIcons";
 import TestModal from "@/components/modal/TestModal";
+import BaseDropdown from "@/components/dropdown/BaseDropdown";
 
 
 const Navigation = () => {
   const router = useRouter();
   const pathname = usePathname();
   const [searchOpen, setSearchOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
     <div id="navigation"
@@ -21,6 +23,12 @@ const Navigation = () => {
         modalVisible={searchOpen}
         setModalVisible={setSearchOpen}
       />
+      {/* Dropdown */}
+      <BaseDropdown 
+        open={dropdownOpen}
+        x={200}
+        y={200}
+      />
 
       {navigationIcons.map((item) => {
         const isActive = item.route ? pathname === item.route : false;
@@ -28,7 +36,7 @@ const Navigation = () => {
           switch (type) {
             case "dropdown":
               // TODO open dropdown
-              console.log("TODO open dropdown")
+              setDropdownOpen(!dropdownOpen);
               break;
             case "search":
               // TODO open search modal
