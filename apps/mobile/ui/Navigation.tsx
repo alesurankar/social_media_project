@@ -1,4 +1,4 @@
-import { useRouter } from "expo-router";
+import { useRouter, usePathname } from "expo-router";
 import { View, StyleSheet, Pressable } from "react-native";
 import Icon from "../../../packages/icons/Icon.native";
 import { navigationIcons } from "../../../packages/icons/navigationIcons";
@@ -6,29 +6,36 @@ import { navigationIcons } from "../../../packages/icons/navigationIcons";
 
 const Navigation = () => {
   const router = useRouter();
+  const pathname = usePathname();
 
   return (
     <View style={styles.container}>
-      {navigationIcons.map((item) => (
-        <Pressable 
-          key={item.name}
-          onPress={() => {
-            if (item.reset) {
-              router.dismissAll();
-            } 
-            else {
-              router.replace(item.route);
-            }
-          }}
-          style={({ pressed }) => [
-            styles.icon, 
-            { transform: [{ scale: pressed ? 0.85 : 1 }] }
-          ]}>
-          {({ pressed }) => (
-            <Icon name={item.name} size={28} color={pressed ? "#a17272" : "#381818"} />
-          )}
-        </Pressable>
-      ))}
+
+      {navigationIcons.map((item) => {
+        const isActive = pathname == item.route;
+
+        return(
+          <Pressable 
+            key={item.name}
+            onPress={() => {
+              if (item.reset) {
+                router.dismissAll();
+              } 
+              else {
+                router.push(item.route);
+              }
+            }}
+            style={({ pressed }) => [
+              styles.icon, 
+              { transform: [{ scale: pressed ? 0.85 : isActive ? 1.1 : 1 }] }
+            ]}>
+              <Icon 
+              name={item.name} 
+              size={28} 
+              color={isActive ? "#a17272" : "#381818"} />
+          </Pressable>
+        );
+      })}
     </View>
   );
 };

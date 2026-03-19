@@ -1,9 +1,10 @@
 import { Stack } from "expo-router"
+import { View, StyleSheet } from "react-native";
+
 
 const RootLayout = () => {
   return (
-    <Stack 
-      screenOptions={{
+    <Stack screenOptions={{
         headerStyle: {
           backgroundColor: '#4d5c75',
         },
@@ -15,8 +16,14 @@ const RootLayout = () => {
         contentStyle: {
           backgroundColor: '#4d5c75'
         }
-      }}>
-      <Stack.Screen name='index' options={{title: 'Landing Page'}} />
+      }}
+    >
+      <Stack.Screen name="index"
+        options={{ header: () => (
+            <View style={styles.landingHeader} />
+          ),
+        }} 
+      />
       <Stack.Screen name='profile' options={{headerTitle: 'Profile'}} />
       <Stack.Screen name='notifications' options={{headerTitle: 'Notifications'}} />
       <Stack.Screen name='explore' options={{headerTitle: 'Explore'}} />
@@ -25,5 +32,14 @@ const RootLayout = () => {
     </Stack>
   );  
 };
+
+const styles = StyleSheet.create({
+  landingHeader: {
+    backgroundColor: '#4d5c75',
+    height: 60,
+    justifyContent: 'center',
+    paddingHorizontal: 16,
+  },
+});
 
 export default RootLayout;
