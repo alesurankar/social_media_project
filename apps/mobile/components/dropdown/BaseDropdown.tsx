@@ -22,8 +22,10 @@ const BaseDropdown = ({ open, x, y, children }: BaseDropdownProps) => {
 const styles = StyleSheet.create({
   container: {
     position: "absolute",
+    pointerEvents: "auto",
+    zIndex: 999,
     backgroundColor: "#1E2939",
-    padding: 4,
+    padding: 15,
     borderRadius: 4,
   },
   content: {

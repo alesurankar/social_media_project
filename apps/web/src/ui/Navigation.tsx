@@ -26,8 +26,8 @@ const Navigation = () => {
       {/* Dropdown */}
       <BaseDropdown 
         open={dropdownOpen}
-        x={200}
-        y={200}
+        x={0}
+        y={80}
       />
 
       {navigationIcons.map((item) => {

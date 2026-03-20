@@ -25,8 +25,8 @@ const Navigation = () => {
       {/* Dropdown */}
       <BaseDropdown
         open={dropdownOpen}
-        x={20}
-        y={20}
+        x={0}
+        y={60}
       />
 
       {navigationIcons.map((item) => {
@@ -35,7 +35,7 @@ const Navigation = () => {
           switch (type) {
             case "dropdown":
               // TODO open dropdown
-              setDropdownOpen(true);
+              setDropdownOpen(!dropdownOpen);
               break;
             case "search":
               // TODO open search modal

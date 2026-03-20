@@ -1,6 +1,6 @@
 # Social Media Project Monorepo
 
-> Multi-platform social media platform (Web, Mobile, Desktop)  
+> Multi-platform social media project (Web, Mobile, Desktop)  
 
 > Built with **React**, **Next.js**, **Expo**, **Cef**, and managed with **pnpm**.
 
