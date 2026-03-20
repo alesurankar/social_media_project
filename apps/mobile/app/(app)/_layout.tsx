@@ -1,17 +1,13 @@
 import { View, StyleSheet } from "react-native";
-import { Stack } from "expo-router";
+import { Slot } from "expo-router";
 import Navigation from '@/ui/Navigation'
 
 
-const NotificationsLayout = () => {
+const AppLayout = () => {
   return (
     <View style={styles.container}>
       <Navigation />
-      <Stack 
-        screenOptions={{
-          headerShown: false,
-        }}
-      />
+      <Slot />
     </View>
   )
 }
@@ -23,4 +19,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default NotificationsLayout;
+export default AppLayout;
