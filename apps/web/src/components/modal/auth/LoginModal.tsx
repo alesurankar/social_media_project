@@ -3,6 +3,8 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import BaseModal from "../BaseModal";
+import { useLogin } from "@packages/utils";
+import { api } from "@/lib/api";
 
 
 type LoginModalProps = {
@@ -11,22 +13,26 @@ type LoginModalProps = {
 };
 
 const LoginModal = ({ modalVisible, setModalVisible }: LoginModalProps) => {
+  const { login, loading, error } = useLogin(api);
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = () => {
+  const handleLogin = async() => {
     console.log("Email: ", email, "Password: ", password);
+    try {
+      const data = await login(email, password);
 
-    // TODO: Replace this with real login logic
-    const loginSuccess = true;
-
-    if (loginSuccess) {
-      setModalVisible(false);
-      setTimeout(() => router.push("/home"), 300)
-    }
-    else {
-      alert("Login failed, Please check yur credentials")
+      if (data) {
+        setModalVisible(false);
+        setTimeout(() => router.push("/home"), 300);
+      } 
+      else {
+        alert(error || "Login failed. Please check your credentials.");
+      }
+    } 
+    catch (err) {
+      alert("Unexpected error. Please try again.");
     }
   };
 
