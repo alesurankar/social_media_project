@@ -1,9 +1,10 @@
 import { View, Text, StyleSheet } from "react-native";
-import { useTest } from "./useTest";
+import { useTest } from "@packages/utils";
+import { api } from "@/lib/api";
 
 
 const Test = () => {
-  const message = useTest();
+  const message = useTest(api);
 
   return (
     <View style={styles.container}>

@@ -13,5 +13,6 @@ packages/
 │   └─ index.ts   
 └─ utils/
     ├─ createApiClient.ts   # shared typed axios client    
-    └─ index.ts             # re-exports createApiClient
+    ├─ index.ts             # re-exports createApiClient   
+    └─ useTest.ts           # test response from server
 ```

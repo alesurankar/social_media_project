@@ -1,10 +1,11 @@
 "use client";
 
-import { useTest } from "./useTest";
+import { useTest } from "@packages/utils";
+import { api } from "@/lib/api";
 
 
 const Test = () => {
-  const message = useTest();
+  const message = useTest(api);
 
   return (
     <div className="flex flex-col items-center justify-center">
