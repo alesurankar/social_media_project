@@ -1,12 +1,12 @@
 import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { useRouter } from 'expo-router';
+import { useState } from 'react';
 import { Logo1 } from "@packages/images";
 import LoginModal from '@/components/modal/auth/LoginModal';
 import RegisterModal from '@/components/modal/auth/RegisterModal';
-import { useState } from 'react';
 
 
-const HomeScreen = () => {
+const LandingPage = () => {
   const router = useRouter();
     const [loginOpen, setLoginOpen] = useState(false);
     const [registerOpen, setRegisterOpen] = useState(false);
@@ -95,4 +95,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeScreen
+export default LandingPage

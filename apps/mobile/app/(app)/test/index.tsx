@@ -1,21 +1,13 @@
 import { View, Text, StyleSheet } from "react-native";
-import { useEffect, useState } from "react";
-import { api } from "@/lib/api";
+import { useTest } from "./useTest";
+
 
 const Test = () => {
-  const [feedMessage, setFeedMessage] = useState<string>("Loading...");
-
-  useEffect(() => {
-    // Test your API endpoint
-    api
-    .get("/test")
-    .then((res) => setFeedMessage(res.data.message || "API OK"))
-    .catch((err) => setFeedMessage("API error: " + err.message));
-  }, []);
+  const message = useTest();
 
   return (
     <View style={styles.container}>
-      <Text style={styles.message}>{feedMessage}</Text>
+      <Text style={styles.message}>{message}</Text>
       <Text>This is Test Page</Text>
     </View> 
   );

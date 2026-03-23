@@ -1,14 +1,14 @@
 "use client";
 
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import Image from "next/image";
 import { Logo1 } from "@packages/images";
 import LoginModal from "@/components/modal/auth/LoginModal"
 import RegisterModal from "@/components/modal/auth/RegisterModal"
 
 
-export default function LandingPage() {
+const LandingPage = () => {
   const router = useRouter();
   const [loginOpen, setLoginOpen] = useState(false);
   const [registerOpen, setRegisterOpen] = useState(false);
@@ -54,4 +54,6 @@ export default function LandingPage() {
       />
     </main>
   );
-}
+};
+
+export default LandingPage
