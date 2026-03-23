@@ -15,6 +15,7 @@ const useLogin = (api: any) => {
   const [error, setError] = useState<string | null>(null);
 
   const login = async (email: string, password: string): Promise<LoginResponse | null> => {
+    console.log("packages/utils/useLogin.ts: LOGIN TRIGGERED")
     setLoading(true);
     setError(null);
 

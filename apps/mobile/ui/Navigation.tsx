@@ -5,13 +5,27 @@ import Icon from "../../../packages/icons/Icon.native";
 import { navigationIcons } from "../../../packages/icons/navigationIcons";
 import TestModal from "@/components/modal/TestModal";
 import BaseDropdown from "@/components/dropdown/BaseDropdown";
+import { useLogout } from "@packages/utils";
+import { api } from "@/lib/api";
 
 
 const Navigation = () => {
+  const { logout } = useLogout(api);
   const router = useRouter();
   const pathname = usePathname();
   const [searchOpen, setSearchOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  const handleLogout = async() => {
+    try {
+      await logout();
+      setDropdownOpen(false);
+      router.dismissAll();
+    }
+    catch(err) {
+      console.error("Logout failed:", err);
+    }
+  }
 
   return (
     <View style={styles.container}>
@@ -42,9 +56,7 @@ const Navigation = () => {
               setSearchOpen(true);
               break;
             case "logout":
-              // TODO logout logic
-              console.log("TODO logout logic")
-                router.dismissAll();
+              handleLogout();
               break;
             default:
               break;

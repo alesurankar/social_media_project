@@ -6,13 +6,27 @@ import Icon from "../../../../packages/icons/Icon";
 import { navigationIcons } from "../../../../packages/icons/navigationIcons";
 import TestModal from "@/components/modal/TestModal";
 import BaseDropdown from "@/components/dropdown/BaseDropdown";
+import { useLogout } from "@packages/utils";
+import { api } from "@/lib/api";
 
 
 const Navigation = () => {
+  const { logout } = useLogout(api);
   const router = useRouter();
   const pathname = usePathname();
   const [searchOpen, setSearchOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  
+  const handleLogout = async() => {
+    try {
+      await logout();
+      setDropdownOpen(false);
+    }
+    catch(err) {
+      console.error("Logout failed:", err);
+    }
+  }
 
   return (
     <div id="navigation"
@@ -43,8 +57,7 @@ const Navigation = () => {
               setSearchOpen(true);
               break;
             case "logout":
-              console.log("TODO logout logic")
-              // TODO logout logic
+              handleLogout();
               break;
             default:
               break;
