@@ -2,7 +2,7 @@ import { useRouter, usePathname } from "expo-router";
 import { View, StyleSheet, Pressable } from "react-native";
 import { useState } from "react";
 import Icon from "../../../packages/icons/Icon.native";
-import { navigationIcons } from "../../../packages/icons/navigationIcons";
+import { navigationConfig } from "../../../packages/navigation/navigationConfig";
 import TestModal from "@/components/modal/TestModal";
 import BaseDropdown from "@/components/dropdown/BaseDropdown";
 import { useLogout } from "@packages/utils";
@@ -43,7 +43,7 @@ const Navigation = () => {
         y={60}
       />
 
-      {navigationIcons.map((item) => {
+      {navigationConfig.map((item) => {
         const isActive = item.route ? pathname === item.route : false;
         const handleAction = (type?: string) => {
           switch (type) {

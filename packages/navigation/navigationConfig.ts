@@ -1,6 +1,6 @@
-import type { IconName } from "./IconPaths";
+import type { IconName } from "icons/IconPaths";
 
-export const navigationIcons: { 
+export const navigationConfig: { 
   name: IconName; 
   route?: string, 
   actionType?: "dropdown" | "search" | "logout";

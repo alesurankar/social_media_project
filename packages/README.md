@@ -11,10 +11,13 @@ packages/
 ├─ images/
 │   ├─ png/   
 │   └─ index.ts   
+├─ navigation/ 
+│   └─ navigationConfig.ts   
 └─ utils/
+    ├─ auth/  
+    │  ├─ useLogin.ts 
+    │  ├─ useLogout.ts 
+    │  └─ useRegister.ts
     ├─ createApiClient.ts   # shared typed axios client    
-    ├─ index.ts             # re-exports createApiClient   
-    ├─ useLogin.ts 
-    ├─ useLogout.ts 
-    └─ useRegister.ts
+    └─ index.ts             # re-exports createApiClient   
 ```
