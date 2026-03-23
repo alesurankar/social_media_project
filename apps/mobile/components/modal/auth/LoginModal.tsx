@@ -12,13 +12,12 @@ type LoginModalProps = {
 };
 
 const LoginModal = ({ modalVisible, setModalVisible }: LoginModalProps) => {
-  const { login, loading, error } = useLogin(api);
+  const { login } = useLogin(api);
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleLogin = async() => {
-    console.log("Email: ", email, "Password: ", password);
     try {
       const data = await login(email, password);
 
@@ -27,7 +26,7 @@ const LoginModal = ({ modalVisible, setModalVisible }: LoginModalProps) => {
         setTimeout(() => router.push("/home"), 300);
       } 
       else {
-        alert(error || "Login failed. Please check your credentials.");
+        alert("Login failed. Please check your credentials.");
       }
     } 
     catch (err) {

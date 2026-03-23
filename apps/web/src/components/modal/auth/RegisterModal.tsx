@@ -3,6 +3,9 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import BaseModal from "../BaseModal";
+import { useRegister } from "@packages/utils";
+import { api } from "@/lib/api";
+
 
 type RegisterModalProps = {
   modalVisible: boolean;
@@ -10,23 +13,26 @@ type RegisterModalProps = {
 };
 
 const RegisterModal = ({ modalVisible, setModalVisible }: RegisterModalProps) => {
+  const { register } = useRegister(api);
   const router = useRouter();
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleRegistration = () => {
-    console.log("Username: ", username, "Email: ", email, "Password: ", password);
-    
-    // TODO: Replace this with real register logic
-    const registerSuccess = true;
+  const handleRegistration = async() => {
+    try {
+      const data = await register(username, email, password);
 
-    if (registerSuccess) {
-      setModalVisible(false);
-      setTimeout(() => router.push("/profile"), 300);
+      if (data) {
+        setModalVisible(false);
+        setTimeout(() => router.push("/profile"), 300);
+      }
+      else {
+        alert("Registration failed")
+      }
     }
-    else {
-      alert("Registration failed")
+    catch (err) {
+      alert("Unexpected error. Please try again.");
     }
   };
 
