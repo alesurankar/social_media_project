@@ -1,10 +1,7 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-
 
 const Explore = () => {
-  const router = useRouter();
 
   return (
     <div className="flex flex-col items-center justify-center">

@@ -22,6 +22,7 @@
       "@/*": ["./src/*"],
       "@packages/icons": ["../../packages/icons"],
       "@packages/images": ["../../packages/images"],
+      "@packages/navigation": ["../../packages/navigation"],
       "@packages/utils": ["../../packages/utils"],
     }
   },

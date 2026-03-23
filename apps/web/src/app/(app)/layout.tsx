@@ -2,8 +2,7 @@ import Navigation from "@/ui/Navigation";
 import { ReactNode } from "react";
 
 
-export default function AppLayout({children}: {
-  children: ReactNode;}) {
+export default function AppLayout({ children }: { children: ReactNode }) {
     
   return (
     <div className="flex flex-col h-screen">

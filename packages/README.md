@@ -7,17 +7,19 @@ packages/
 │   ├─ Icon.native.tsx   # wrapper for mobile icon names
 │   ├─ Icon.tsx          # wrapper for web and desktop icon names
 │   ├─ IconPaths.ts      # path registry for SVG icons
-│   └─ navigationIcons.ts   # data for Navigation component
+│   ├─ index.nativets    # re-exports
+│   └─ index.ts          # re-exports
 ├─ images/
 │   ├─ png/   
-│   └─ index.ts   
+│   └─ index.ts        # re-exports
 ├─ navigation/ 
-│   └─ navigationConfig.ts   
+│   ├─ index.ts        # re-exports
+│   └─ navigationConfig.ts    # data for Navigation component
 └─ utils/
     ├─ auth/  
     │  ├─ useLogin.ts 
     │  ├─ useLogout.ts 
     │  └─ useRegister.ts
     ├─ createApiClient.ts   # shared typed axios client    
-    └─ index.ts             # re-exports createApiClient   
+    └─ index.ts        # re-exports
 ```

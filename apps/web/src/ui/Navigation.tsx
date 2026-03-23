@@ -2,8 +2,8 @@
 
 import { useRouter, usePathname } from "next/navigation";
 import { useState } from "react";
-import Icon from "../../../../packages/icons/Icon";
-import { navigationConfig } from "../../../../packages/navigation/navigationConfig";
+import { Icon } from "@packages/icons";
+import { navigationConfig } from "@packages/navigation";
 import TestModal from "@/components/modal/TestModal";
 import BaseDropdown from "@/components/dropdown/BaseDropdown";
 import { useLogout } from "@packages/utils";

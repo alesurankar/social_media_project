@@ -7,8 +7,7 @@ export const metadata = {
   description: "Web app for Social Media Project",
 };
 
-export default function RootLayout({ children }: { 
-  children: ReactNode }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   
   return (
     <html lang="en">

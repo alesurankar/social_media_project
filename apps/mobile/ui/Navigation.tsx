@@ -1,8 +1,8 @@
 import { useRouter, usePathname } from "expo-router";
 import { View, StyleSheet, Pressable } from "react-native";
 import { useState } from "react";
-import Icon from "../../../packages/icons/Icon.native";
-import { navigationConfig } from "../../../packages/navigation/navigationConfig";
+import { Icon } from "@packages/icons";
+import { navigationConfig } from "@packages/navigation";
 import TestModal from "@/components/modal/TestModal";
 import BaseDropdown from "@/components/dropdown/BaseDropdown";
 import { useLogout } from "@packages/utils";
