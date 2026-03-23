@@ -1,5 +1,5 @@
 
 declare module "*.png" {
-  const src: string;
+  const src: unknown;
   export default src;
 }
