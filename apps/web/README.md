@@ -51,7 +51,7 @@ apps/web/
 │  ├─ lib/
 │  │  └─ api.ts    # imports { createApiClient } from packages
 │  └─ ui/
-│     ├─ BodyFrame.tsx
+│     ├─ Body.tsx
 │     └─ Navigation.tsx
 └─ .env.local          # Base URL of backend API
  ```
