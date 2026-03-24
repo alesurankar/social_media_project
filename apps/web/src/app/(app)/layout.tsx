@@ -11,7 +11,7 @@ const AppLayout = ({ children }: { children: ReactNode }) => {
 
   return (
     <div className="flex flex-col h-screen">
-      <Navigation />
+      <Navigation className="flex h-24 w-full"/>
       
       {/* Body */}
       <div className="flex flex-1 relative">

@@ -45,7 +45,6 @@
   }
   button {
     background-color: #4d5c75;
-    color: #381818;
     border: none;
     cursor: pointer;
     transition: transform 0.1s, color 0.1s;

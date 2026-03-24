@@ -10,14 +10,17 @@ import { useLogout } from "@packages/utils";
 import { api } from "@/lib/api";
 
 
-const Navigation = () => {
+interface NavigationProps {
+  className?: string;
+}
+
+const Navigation = ({className}: NavigationProps) => {
   const { logout } = useLogout(api);
   const router = useRouter();
   const pathname = usePathname();
   const [searchOpen, setSearchOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  
   const handleLogout = async() => {
     try {
       await logout();
@@ -29,8 +32,7 @@ const Navigation = () => {
   }
 
   return (
-    <div className="bg-[#4d5c75] h-24 w-full flex items-center justify-between p-4 px-10"
-    >
+    <div className={`bg-[#333344] items-center justify-between p-4 px-10 ${className}`}>
       {/* Modal */}
       <TestModal 
         modalVisible={searchOpen}
@@ -74,13 +76,13 @@ const Navigation = () => {
                 router.push(item.route);
               }
             }}
-            className={`transition-transform duration-150 
+            className={`transition-transform duration-150 bg-transparent
               ${ isActive ? "scale-110" : "" }`}
           >
             <Icon
               name={item.name}
               size={36}
-              color={isActive ? "#a17272" : "#381818"}
+              color={isActive ? "#d5ffce" : "#49c23c"}
             />
           </button>
         );

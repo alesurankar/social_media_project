@@ -11,7 +11,7 @@ const AppLayout = () => {
 
   return (
     <View style={styles.container}>
-      <Navigation />
+      <Navigation style={styles.navigation}/>
 
       {/* Body */}
       <View style={styles.body}>
@@ -58,6 +58,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
+  },
+  navigation: {
+    width: "100%",
+    height: 50,
   },
   body: {
     flex: 1,

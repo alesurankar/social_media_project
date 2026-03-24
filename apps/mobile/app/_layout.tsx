@@ -18,10 +18,10 @@ export default function RootLayout() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#363942",
+    backgroundColor: "#333344",
   },
   landingHeader: {
-    backgroundColor: "#363942",
+    backgroundColor: "#333344",
     height: 35,
     justifyContent: "center",
   }

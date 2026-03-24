@@ -1,5 +1,5 @@
 import { useRouter, usePathname } from "expo-router";
-import { View, StyleSheet, Pressable } from "react-native";
+import { View, StyleSheet, Pressable, ViewStyle  } from "react-native";
 import { useState } from "react";
 import { Icon } from "@packages/icons";
 import { navigationConfig } from "@packages/navigation";
@@ -9,7 +9,11 @@ import { useLogout } from "@packages/utils";
 import { api } from "@/lib/api";
 
 
-const Navigation = () => {
+interface NavigationProps {
+  style?: ViewStyle | ViewStyle[];
+}
+
+const Navigation = ({ style }: NavigationProps) => {
   const { logout } = useLogout(api);
   const router = useRouter();
   const pathname = usePathname();
@@ -28,7 +32,7 @@ const Navigation = () => {
   }
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, style]}>
 
       {/* Modal */}
       <TestModal 
@@ -81,7 +85,7 @@ const Navigation = () => {
               <Icon 
               name={item.name} 
               size={28} 
-              color={isActive ? "#a17272" : "#381818"} />
+              color={isActive ? "#d5ffce" : "#49c23c"} />
           </Pressable>
         );
       })}
@@ -91,8 +95,7 @@ const Navigation = () => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#4d5c75",
-    width: "100%",
+    backgroundColor: "#333344",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
