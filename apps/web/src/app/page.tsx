@@ -3,7 +3,7 @@ import LandingPage from "@/components/LandingPage";
 
 
 const PageSwitcher = () => {
-  const testing = false;
+  const testing = true;
 
   return (
     <>

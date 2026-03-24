@@ -37,12 +37,6 @@ const LandingPage = () => {
       >Sign up
       </button> 
 
-      <button 
-        className="hover:text-black text-white py-4 px-8 mb-2 w-64 rounded"
-        onClick={() => router.push("/test")} 
-      >Test
-      </button> 
-
       {/* Modal */}
       <LoginModal 
         modalVisible={loginOpen} 

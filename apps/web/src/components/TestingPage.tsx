@@ -1,5 +1,11 @@
+"use client"
+
+import { useRouter } from "next/navigation";
+
 
 const TestingPage = () => {
+  const router = useRouter();
+
   return (
     <div className="flex flex-row h-screen text-4xl">
 
@@ -26,9 +32,10 @@ const TestingPage = () => {
           <div className="flex flex-1 bg-[#333] border-1 border-white items-center justify-center ">
             R-B-1
           </div>
-          <div className="flex w-[20%] bg-[#000] border-1 border-white items-center justify-center">
+          <button className="flex w-[20%] bg-[#000] border-1 border-white items-center justify-center"
+            onClick={() => router.push("/test")}>
             R-B-2
-          </div>
+          </button>
         </div>
       </div>
     </div>
