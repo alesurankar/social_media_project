@@ -41,11 +41,13 @@ apps/web/
 │  ├─ components/
 │  │   ├─ dropdown/
 │  │   │  └─ BaseDropdown.tsx
-│  │   └─ modal/
-│  │      ├─ auth/
-│  │      │  ├─ LoginModal.tsx
-│  │      │  └─ RegisterModal.tsx
-│  │      └─ BaseModal.tsx
+│  │   ├─ modal/
+│  │   │  ├─ auth/
+│  │   │  │  ├─ LoginModal.tsx
+│  │   │  │  └─ RegisterModal.tsx
+│  │   │  └─ BaseModal.tsx
+│  │   ├─ LandingPage.tsx
+│  │   └─ TestingPage.tsx
 │  ├─ lib/
 │  │  └─ api.ts    # imports { createApiClient } from packages
 │  └─ ui/
