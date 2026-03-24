@@ -95,8 +95,8 @@ const Navigation = ({ style }: NavigationProps) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#333344",
     flexDirection: "row",
+    backgroundColor: "#333344",
     justifyContent: "space-between",
     alignItems: "center",
     paddingVertical: 10,
