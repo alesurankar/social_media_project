@@ -14,7 +14,7 @@ const LandingPage = () => {
   const [registerOpen, setRegisterOpen] = useState(false);
 
   return (
-    <main className="flex flex-col items-center justify-center h-screen">
+    <main className="flex flex-col bg-[#cccccc] 2xl:mx-10 xl:mx-6 lg:mx-4 md:mx-2 sm:mx-1 items-center justify-center h-screen">
       <Image
         src={Logo1}
         alt="Logo"
