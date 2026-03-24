@@ -9,15 +9,22 @@ const Test = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.message}>{message}</Text>
-      <Text>This is Test Page</Text>
+      <Text style={styles.text}>This is Test Page</Text>
     </View> 
   );
 };
 
+
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    paddingTop: 50,
+    alignItems: 'center',
+  },
+  text: {
+    color: 'black',
+    fontSize: 20,
   },
     message: {
     color: "red",

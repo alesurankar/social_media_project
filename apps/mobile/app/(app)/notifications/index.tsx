@@ -4,7 +4,7 @@ const Notifications = () => {
 
   return (
     <View style={styles.container}>
-      <Text>This is Notifications Page</Text>
+      <Text style={styles.text}>This is Notifications Page</Text>
     </View> 
   );
 };
@@ -12,7 +12,12 @@ const Notifications = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    paddingTop: 50,
+    alignItems: 'center',
+  },
+  text: {
+    color: 'black',
+    fontSize: 20,
   },
 });
 

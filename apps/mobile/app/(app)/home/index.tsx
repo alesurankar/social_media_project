@@ -4,7 +4,7 @@ const Home = () => {
 
   return (
     <View style={styles.container}>
-      <Text>This is Home Page</Text>
+      <Text style={styles.text}>This is Home Page</Text>
     </View> 
   );
 };
@@ -12,7 +12,12 @@ const Home = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    paddingTop: 50,
+    alignItems: 'center',
+  },
+  text: {
+    color: 'black',
+    fontSize: 20,
   },
 });
 

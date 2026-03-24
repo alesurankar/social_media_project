@@ -4,7 +4,7 @@ const Explore = () => {
 
   return (
     <View style={styles.container}>
-      <Text>This is Explore Page</Text>
+      <Text style={styles.text}>This is Explore Page</Text>
     </View> 
   );
 };
@@ -12,7 +12,12 @@ const Explore = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    paddingTop: 50,
+    alignItems: 'center',
+  },
+  text: {
+    color: 'black',
+    fontSize: 20,
   },
 });
 

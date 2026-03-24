@@ -1,13 +1,13 @@
 "use client"
 
-import Navigation from "@/ui/Navigation";
 import { ReactNode, useState } from "react";
+import Navigation from "@/ui/Navigation";
 import { Icon } from "@packages/icons";
 
 
 const AppLayout = ({ children }: { children: ReactNode }) => {
-  const [rightSidebar, setRightSidebar] = useState(true);  
   const [leftSidebar, setLeftSidebar] = useState(true);  
+  const [rightSidebar, setRightSidebar] = useState(true);  
 
   return (
     <div className="flex flex-col h-screen">

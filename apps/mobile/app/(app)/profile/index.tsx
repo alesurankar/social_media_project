@@ -6,7 +6,7 @@ const Profile = () => {
 
   return (
     <View style={styles.container}>
-      <Text>This is Profile Page</Text>
+      <Text style={styles.text}>This is Profile Page</Text>
     </View> 
   );
 };
@@ -14,7 +14,12 @@ const Profile = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    paddingTop: 50,
+    alignItems: 'center',
+  },
+  text: {
+    color: 'black',
+    fontSize: 20,
   },
 });
 
