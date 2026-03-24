@@ -1,5 +1,4 @@
 import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import { useRouter } from 'expo-router';
 import { useState } from 'react';
 import { Logo1 } from "@packages/images";
 import LoginModal from '@/components/modal/auth/LoginModal';
@@ -7,7 +6,6 @@ import RegisterModal from '@/components/modal/auth/RegisterModal';
 
 
 const LandingPage = () => {
-  const router = useRouter();
   const [loginOpen, setLoginOpen] = useState(false);
   const [registerOpen, setRegisterOpen] = useState(false);
 
@@ -30,12 +28,6 @@ const LandingPage = () => {
         style={styles.button}
         onPress={ () => setRegisterOpen(true) }
       ><Text style={styles.buttonText}>Sign up</Text>
-      </TouchableOpacity>
-      
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => router.push('/test')}
-      ><Text style={styles.buttonText}>Test</Text>
       </TouchableOpacity>
 
       {/* Modal */}
