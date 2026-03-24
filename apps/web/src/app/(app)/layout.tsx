@@ -9,29 +9,31 @@ export default function AppLayout({ children }: { children: ReactNode }) {
   const [rightSidebar, setRightSidebar] = useState(true);  
 
   return (
-    <div className="flex flex-col bg-[#363942] h-screen">
+    <div className="flex flex-col h-screen">
       <Navigation />
-      <div className="flex flex-1">
+      
+      {/* Body */}
+      <div className="flex flex-1 relative">
 
         {/* Left sideBar */}
-        <div className="border bg-[#fff] w-[18%]">
+        <div className="w-[18%] border bg-[#fff]">
           <h3>Right Sidebar</h3>
         </div>
 
         <button 
-          className="absolute top-26 right-0 m-2 bg-transparent border-none"
+          className="absolute top-0 right-0 m-2 bg-transparent border-none z-50"
           onClick={() => setRightSidebar(prev => !prev)}
           ><Icon name="bars_arrow_down" size={32} color="black"/>
         </button>
 
         {/* Main content */}
-        <div className="border bg-[#ccc] flex-1 overflow-auto">
+        <div className="flex-1 border bg-[#ccc] overflow-auto">
           {children}
         </div>
 
         {/* Right sidebar */}
         {rightSidebar && (
-          <div className="border bg-[#fff] w-[18%]">
+          <div className="absolute top-0 right-0 w-[18%] h-full border bg-[#fff]">
             <h3>Left Sidebar</h3>
           </div>
         )}
