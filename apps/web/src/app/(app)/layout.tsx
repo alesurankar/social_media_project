@@ -18,7 +18,6 @@ export default function AppLayout({ children }: { children: ReactNode }) {
           <h3>Right Sidebar</h3>
         </div>
 
-        
         <button 
           className="absolute top-26 right-0 m-2 bg-transparent border-none"
           onClick={() => setRightSidebar(prev => !prev)}
@@ -26,7 +25,7 @@ export default function AppLayout({ children }: { children: ReactNode }) {
         </button>
 
         {/* Main content */}
-        <div className="bg-[#ccc] flex-1 overflow-auto">
+        <div className="border bg-[#ccc] flex-1 overflow-auto">
           {children}
         </div>
 
