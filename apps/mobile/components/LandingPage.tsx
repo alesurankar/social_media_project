@@ -3,11 +3,17 @@ import { useState } from 'react';
 import { Logo1 } from "@packages/images";
 import LoginModal from '@/components/modal/auth/LoginModal';
 import RegisterModal from '@/components/modal/auth/RegisterModal';
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 
 const LandingPage = () => {
   const [loginOpen, setLoginOpen] = useState(false);
   const [registerOpen, setRegisterOpen] = useState(false);
+
+  const handleToken = async (newToken: string) => {
+    console.log("Saving token from LandingPage:", newToken);
+    await AsyncStorage.setItem("token", newToken);
+  };
 
   return (
     <View style={styles.container}>
@@ -34,6 +40,7 @@ const LandingPage = () => {
       <LoginModal 
         modalVisible={loginOpen}
         setModalVisible={setLoginOpen}
+        handleToken={handleToken}
       />
       <RegisterModal 
         modalVisible={registerOpen}

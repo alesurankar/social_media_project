@@ -5,27 +5,35 @@ import asyncErrorHandler from "./asyncErrorHandler.js";
 
 
 export const isAuthenticatedUser = asyncErrorHandler(async (req, res, next) => {
-  // //  DEV-ONLY AUTH BYPASS
-  // if (
-  //     process.env.NODE_ENV === "development" &&
-  //     process.env.SKIP_AUTH === "true"
-  // ) {
-  //     req.user = {
-  //         _id: "64f000000000000000000001",
-  //         name: "Dev User",
-  //         role: "admin",
-  //     };
-  //     return next();
-  // }
+  let token;
 
-  // NORMAL AUTH FLOW (PRODUCTION)
-  const { token } = req.cookies;
+  // Check cookie first (web)
+  if (req.cookies && req.cookies.token) {
+    token = req.cookies.token;
+  }
+
+  // Check Authorization header (mobile)
+  else if (req.headers.authorization && req.headers.authorization.startsWith("Bearer ")) {
+    token = req.headers.authorization.split(" ")[1];
+  }
 
   if (!token) {
+    console.log("No token found in request");
     return next(new ErrorHandler("Please Login to Access", 401))
   }
 
-  const decodedData = jwt.verify(token, process.env.JWT_SECRET);
+  console.log("Token received:", token);
+  console.log("JWT_SECRET in middleware:", process.env.JWT_SECRET);
+
+  let decodedData;
+  try {
+    decodedData = jwt.verify(token, process.env.JWT_SECRET);
+  } 
+  catch (err) {
+    console.error("JWT verification failed:", err.message);
+    return next(new ErrorHandler("Invalid or expired token", 401));
+  }
+
   req.user = await User.findById(decodedData.id);
   next();
 });

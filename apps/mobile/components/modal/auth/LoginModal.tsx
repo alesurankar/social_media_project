@@ -9,9 +9,10 @@ import { api } from "@/lib/api";
 type LoginModalProps = {
   modalVisible: boolean;
   setModalVisible: (visible: boolean) => void;
+  handleToken: (token: string) => Promise<void>;
 };
 
-const LoginModal = ({ modalVisible, setModalVisible }: LoginModalProps) => {
+const LoginModal = ({ modalVisible, setModalVisible, handleToken }: LoginModalProps) => {
   const { login } = useLogin(api);
   const router = useRouter();
   const [email, setEmail] = useState("");
@@ -19,7 +20,9 @@ const LoginModal = ({ modalVisible, setModalVisible }: LoginModalProps) => {
 
   const handleLogin = async() => {
     try {
-      await login(email, password);
+      const res = await login(email, password);
+      console.log("Token received in LoginModal:", res.token);
+      await handleToken(res.token);
       setModalVisible(false);
       router.push("/home");
     } 

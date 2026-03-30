@@ -15,17 +15,20 @@ const Body = ({ style }: BodyProps) => {
   const [leftSidebar, setLeftSidebar] = useState(false);
   const [rightSidebar, setRightSidebar] = useState(false);
   const [token, setToken] = useState<string | undefined>(undefined);
+  const [ready, setReady] = useState(false);
 
   // Load token from AsyncStorage once
   useEffect(() => {
     const loadToken = async () => {
       const storedToken = await AsyncStorage.getItem("token");
-      setToken(storedToken);
+      console.log("Loaded token from AsyncStorage:", storedToken);
+      setToken(storedToken ?? undefined);
+      setReady(true);
     };
     loadToken();
   }, []);
 
-  const { user, error } = useMe(api, token);
+  const { user, error, refetch } = useMe(api, ready ? token : undefined);
   
   return (
     <View style={[styles.container, style]}>
