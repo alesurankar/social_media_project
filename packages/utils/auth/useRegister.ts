@@ -4,7 +4,7 @@ const useRegister = (api: any) => {
   const register = async(username: string, email: string, password: string) => {
     console.log("packages/utils/useRegister.ts: REGISTER TRIGGERED")
     console.log("Username: ", username, "Email: ", email, "Password: ", password);
-    const res = await api.get("/users/register", { 
+    const res = await api.post("/users/register", { 
       username, 
       email, 
       password 
