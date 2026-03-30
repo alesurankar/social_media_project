@@ -21,6 +21,8 @@ packages/
     │  ├─ useLogout.ts 
     │  ├─ useMe.ts 
     │  └─ useRegister.ts
+    ├─ context/
+    │  └─ AuthContext.tsx
     ├─ createApiClient.ts   # shared typed axios client    
     └─ index.ts        # re-exports
 ```

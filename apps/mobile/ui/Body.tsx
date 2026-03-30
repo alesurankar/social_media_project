@@ -3,8 +3,8 @@ import { useState } from "react";
 import { Slot } from "expo-router";
 import { Icon } from "@packages/icons"
 import { useMe } from "@packages/utils";
+import { useAuth } from "@packages/utils";
 import { api } from "@/lib/api";
-import { useAuth } from "@/context/AuthContext";
 
 
 interface BodyProps {

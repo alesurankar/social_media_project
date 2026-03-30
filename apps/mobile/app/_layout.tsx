@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Slot } from "expo-router";
 import { StatusBar } from "expo-status-bar";
-import { AuthContext } from "@/context/AuthContext";
+import { AuthContext } from "@packages/utils";
 
 
 export default function RootLayout() {

@@ -1,7 +1,7 @@
 import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { useState } from 'react';
 import { Logo1 } from "@packages/images";
-import { useAuth } from "@/context/AuthContext";
+import { useAuth } from "@packages/utils";
 import LoginModal from '@/components/modal/auth/LoginModal';
 import RegisterModal from '@/components/modal/auth/RegisterModal';
 
