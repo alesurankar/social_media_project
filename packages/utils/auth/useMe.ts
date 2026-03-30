@@ -23,10 +23,8 @@ const useMe = (api: any, token?: string, ready?: boolean) => {
   };
 
   useEffect(() => {
-    if (ready) {
       me();
-    }
-  }, [ready, token]);
+  }, []);
 
   return { user, error, refetch: me };
 };
