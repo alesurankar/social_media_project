@@ -2,6 +2,9 @@
 
 import { ReactNode, useState } from "react";
 import { Icon } from "@packages/icons";
+import { useMe } from "@packages/utils";
+import { api } from "@/lib/api";
+
 
 interface BodyProps {
   className?: string;
@@ -11,6 +14,8 @@ interface BodyProps {
 const Body = ({ className, children }: BodyProps) => {
   const [leftSidebar, setLeftSidebar] = useState(true);  
   const [rightSidebar, setRightSidebar] = useState(true);  
+  
+  const { user, error} = useMe(api);
 
   return (
     <div className={className}>
@@ -25,6 +30,16 @@ const Body = ({ className, children }: BodyProps) => {
       {leftSidebar && (
         <div className="w-[18%] border bg-[#fff]">
           <h3 className="pt-20">Left Sidebar</h3>
+
+          {/* User info */}
+          {error && <p className="text-red-500">{error}</p>}
+          {user && (
+            <div className="mt-4">
+              <p className="font-bold">{user.username}</p>
+              <p className="text-sm text-gray-600">{user.email}</p>
+            </div>
+          )}
+          {!user && !error && <p>No user logged in</p>}
         </div>
       )}
 

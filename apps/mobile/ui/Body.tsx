@@ -2,6 +2,8 @@ import { View, Text, StyleSheet, TouchableOpacity, ViewStyle } from "react-nativ
 import { useState } from "react";
 import { Slot } from "expo-router";
 import { Icon } from "@packages/icons"
+import { useMe } from "@packages/utils";
+import { api } from "@/lib/api";
 
 
 interface BodyProps {
@@ -11,6 +13,8 @@ interface BodyProps {
 const Body = ({ style }: BodyProps) => {
   const [leftSidebar, setLeftSidebar] = useState(false);
   const [rightSidebar, setRightSidebar] = useState(false);
+
+  const { user, error } = useMe(api);
   
   return (
     <View style={[styles.container, style]}>
@@ -27,6 +31,16 @@ const Body = ({ style }: BodyProps) => {
         {leftSidebar && (
           <View style={styles.leftSidebar}>
             <Text style={styles.text}>Left Sidebar</Text>
+
+            {/* User info */}
+            {error && <Text>{error}</Text>}
+            {user && (
+              <View>
+                <Text>{user.Username}</Text>
+                <Text>{user.email}</Text>
+              </View>
+            )}
+            {!user && !error && <Text>No user logged in</Text>}
           </View>
         )}
 
