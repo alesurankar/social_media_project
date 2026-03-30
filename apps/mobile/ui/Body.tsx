@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet, TouchableOpacity, ViewStyle } from "react-native";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Slot } from "expo-router";
 import { Icon } from "@packages/icons"
 import { useMe } from "@packages/utils";
@@ -13,8 +14,18 @@ interface BodyProps {
 const Body = ({ style }: BodyProps) => {
   const [leftSidebar, setLeftSidebar] = useState(false);
   const [rightSidebar, setRightSidebar] = useState(false);
+  const [token, setToken] = useState<string | undefined>(undefined);
 
-  const { user, error } = useMe(api);
+  // Load token from AsyncStorage once
+  useEffect(() => {
+    const loadToken = async () => {
+      const storedToken = await AsyncStorage.getItem("token");
+      setToken(storedToken);
+    };
+    loadToken();
+  }, []);
+
+  const { user, error } = useMe(api, token);
   
   return (
     <View style={[styles.container, style]}>

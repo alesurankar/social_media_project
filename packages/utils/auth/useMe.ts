@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 
-const useMe = (api: any) => {
+const useMe = (api: any, token?: string) => {
   const [user, setUser] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -9,7 +9,8 @@ const useMe = (api: any) => {
     setError(null);
     try {
       console.log("packages/utils/useMe.ts: USER DETAILS TRIGGERED");
-      const res = await api.get("/users/me");
+      const headers = token ? { Authorization: `Bearer ${token}` } : undefined;
+      const res = await api.get("/users/me", { headers });
       setUser(res.data.user);
       return res.data.user;
     } 
@@ -21,7 +22,7 @@ const useMe = (api: any) => {
 
   useEffect(() => {
     me();
-  }, []);
+  }, [token]);
 
   return { user, error, refetch: me };
 };
