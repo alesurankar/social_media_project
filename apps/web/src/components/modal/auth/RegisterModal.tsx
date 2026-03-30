@@ -21,18 +21,12 @@ const RegisterModal = ({ modalVisible, setModalVisible }: RegisterModalProps) =>
 
   const handleRegistration = async() => {
     try {
-      const data = await register(username, email, password);
-
-      if (data) {
-        setModalVisible(false);
-        setTimeout(() => router.push("/profile"), 300);
-      }
-      else {
-        alert("Registration failed")
-      }
+      await register(username, email, password);
+      setModalVisible(false);
+      setTimeout(() => router.push("/profile"), 300);
     }
     catch (err) {
-      alert("Unexpected error. Please try again.");
+      alert("Registration failed. Please try again.");
     }
   };
 

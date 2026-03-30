@@ -11,6 +11,7 @@ interface BodyProps {
 const Body = ({ style }: BodyProps) => {
   const [leftSidebar, setLeftSidebar] = useState(false);
   const [rightSidebar, setRightSidebar] = useState(false);
+  
   return (
     <View style={[styles.container, style]}>
 
