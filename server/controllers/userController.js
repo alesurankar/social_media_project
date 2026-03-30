@@ -11,7 +11,7 @@ import sendToken from "../helpers/sendToken.js";
 
 /**
  * Register New User
- * @route POST /api/v1/register
+ * @route POST /api/v1/users/register
  * @access Public
  */
 export const registerUser = asyncErrorHandler(async (req, res, next) => {
@@ -35,7 +35,7 @@ export const registerUser = asyncErrorHandler(async (req, res, next) => {
 
 /**
  * User Login
- * @route POST /api/v1/login
+ * @route POST /api/v1/users/login
  * @access Public
  */
 export const loginUser = asyncErrorHandler(async (req, res, next) => {
@@ -60,11 +60,12 @@ export const loginUser = asyncErrorHandler(async (req, res, next) => {
 /**
  * User Logout
  * Clears the authentication token cookie
- * @route POST /api/v1/logout
+ * @route POST /api/v1/users/logout
  * @access Private
  */
 export const logoutUser = asyncErrorHandler(async (req, res, next) => {
-  // Clear the token cookie by setting it to null with immediate expiry
+  console.log("🔥 logoutUser triggered");
+  
   res.cookie("token", null, {
     expires: new Date(Date.now()),
     httpOnly: true,
