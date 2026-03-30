@@ -22,7 +22,7 @@ const LoginModal = ({ modalVisible, setModalVisible }: LoginModalProps) => {
     try {
       await login(email, password);
       setModalVisible(false);
-      setTimeout(() => router.push("/home"), 300);
+      router.push("/home");
     } 
     catch (err) {
       alert("Login failed. Please check your credentials.");

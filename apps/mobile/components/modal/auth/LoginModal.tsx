@@ -19,18 +19,12 @@ const LoginModal = ({ modalVisible, setModalVisible }: LoginModalProps) => {
 
   const handleLogin = async() => {
     try {
-      const data = await login(email, password);
-
-      if (data) {
-        setModalVisible(false);
-        setTimeout(() => router.push("/home"), 300);
-      } 
-      else {
-        alert("Login failed. Please check your credentials.");
-      }
+      await login(email, password);
+      setModalVisible(false);
+      router.push("/home");
     } 
     catch (err) {
-      alert("Unexpected error. Please try again.");
+      alert("Login failed. Please check your credentials.");
     }
   };
 
