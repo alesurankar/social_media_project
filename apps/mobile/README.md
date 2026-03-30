@@ -44,6 +44,8 @@ apps/mobile/
 │      │  ├─ LoginModal.tsx
 │      │  └─ RegisterModal.tsx
 │      └─ BaseModal.tsx
+├─ context/
+│   └─ AuthContext.tsx
 ├─ lib/
 │   └─ api.ts         # imports { createApiClient } from packages
 ├─ ui/

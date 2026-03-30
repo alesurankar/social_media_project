@@ -1,19 +1,15 @@
 import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { useState } from 'react';
 import { Logo1 } from "@packages/images";
+import { useAuth } from "@/context/AuthContext";
 import LoginModal from '@/components/modal/auth/LoginModal';
 import RegisterModal from '@/components/modal/auth/RegisterModal';
-import AsyncStorage from "@react-native-async-storage/async-storage";
 
 
 const LandingPage = () => {
   const [loginOpen, setLoginOpen] = useState(false);
   const [registerOpen, setRegisterOpen] = useState(false);
-
-  const handleToken = async (newToken: string) => {
-    console.log("Saving token from LandingPage:", newToken);
-    await AsyncStorage.setItem("token", newToken);
-  };
+  const { handleToken } = useAuth();
 
   return (
     <View style={styles.container}>
