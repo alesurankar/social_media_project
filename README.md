@@ -39,6 +39,8 @@ social_media_project/
 
 - Node.js 18+
 - pnpm 8+
+- **Expo account** (needed for EAS builds)  
+- **EAS CLI** (Expo Application Services CLI)
 
 ---
 
