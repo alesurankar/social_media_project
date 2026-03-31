@@ -48,6 +48,8 @@ apps/mobile/
 │   └─ api.ts         # imports { createApiClient } from packages
 ├─ ui/
 │   ├─ Body.tsx
+│   ├─ LeftSidebar.tsx
+│   ├─ RightSidebar.tsx
 │   └─ Navigation.tsx
 └─ .env               # Base URL of backend API
  ```
