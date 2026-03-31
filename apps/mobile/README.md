@@ -6,6 +6,30 @@
 
 ---
 
+## Build a Development APK (Standalone App)
+
+1. Install EAS CLI (global):
+
+```bash
+pnpm add -g eas-cli
+```
+
+2. Verify instalation: 
+
+```bash
+eas --version
+```
+
+3. Build:
+
+```bash
+cd apps/mobile
+eas login
+eas build --platform android --profile development
+```
+
+---
+
 ## Development
 
 From the **root of the monorepo**:
