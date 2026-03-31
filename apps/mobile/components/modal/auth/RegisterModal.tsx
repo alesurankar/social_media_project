@@ -63,7 +63,7 @@ const RegisterModal = ({ modalVisible, setModalVisible }: RegisterModalProps) =>
           onChangeText={setPassword}
         />
 
-        <View style={{ marginTop: 10 }}>
+        <View style={{ marginTop: 10, marginBottom: 10 }}>
           <Text style={{ fontWeight: "bold", marginBottom: 5 }}>Gender</Text>
 
           {options.map((option) => (
