@@ -8,7 +8,7 @@ import { api } from "@/lib/api";
 
 const LeftSideBar = () => {
   const [leftSidebar, setLeftSidebar] = useState(true);  
-  const { user, error} = useMe(api);
+  const { user, error } = useMe(api);
 
   return (
     <>
