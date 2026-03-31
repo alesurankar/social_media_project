@@ -21,7 +21,6 @@ const LoginModal = ({ modalVisible, setModalVisible, handleToken }: LoginModalPr
   const handleLogin = async() => {
     try {
       const res = await login(email, password);
-      console.log("Token received in LoginModal:", res.token);
       await handleToken(res.token);
       setModalVisible(false);
       router.push("/home");

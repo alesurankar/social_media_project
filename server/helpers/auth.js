@@ -22,9 +22,6 @@ export const isAuthenticatedUser = asyncErrorHandler(async (req, res, next) => {
     return next(new ErrorHandler("Please Login to Access", 401))
   }
 
-  console.log("Token received:", token);
-  console.log("JWT_SECRET in middleware:", process.env.JWT_SECRET);
-
   let decodedData;
   try {
     decodedData = jwt.verify(token, process.env.JWT_SECRET);

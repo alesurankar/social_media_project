@@ -14,7 +14,6 @@ export default function RootLayout() {
   useEffect(() => {
     const loadToken = async () => {
       const storedToken = await AsyncStorage.getItem("token");
-      console.log("Loaded token from AsyncStorage:", storedToken);
       setToken(storedToken ?? undefined);
       setReady(true);
     };
@@ -22,7 +21,6 @@ export default function RootLayout() {
   }, []);
 
   const handleToken = async (newToken: string) => {
-    console.log("Saving token from LandingPage:", newToken);
     await AsyncStorage.setItem("token", newToken);
     setToken(newToken);
   };

@@ -15,8 +15,7 @@ import sendToken from "../helpers/sendToken.js";
  * @access Public
  */
 export const registerUser = asyncErrorHandler(async (req, res, next) => {
-  console.log("🔥 registerUser triggered");
-
+  console.log("🔥 Server/userController: registerUser triggered");
   const { username, email, password, gender } = req.body;
 
   const existingUser = await User.findOne({ email });
@@ -40,8 +39,7 @@ export const registerUser = asyncErrorHandler(async (req, res, next) => {
  * @access Public
  */
 export const loginUser = asyncErrorHandler(async (req, res, next) => {
-  console.log("🔥 loginUser triggered");
-
+  console.log("🔥 Server/userController: loginUser triggered");
   const { email, password } = req.body;
   
   const user = await User.findOne({ email }).select("+password");
@@ -65,8 +63,7 @@ export const loginUser = asyncErrorHandler(async (req, res, next) => {
  * @access Private
  */
 export const logoutUser = asyncErrorHandler(async (req, res, next) => {
-  console.log("🔥 logoutUser triggered");
-  
+  console.log("🔥 Server/userController: logoutUser triggered");
   res.cookie("token", null, {
     expires: new Date(Date.now()),
     httpOnly: true,
