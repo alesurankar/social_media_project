@@ -12,7 +12,7 @@ const RightSidebar = () => {
       <button 
           className="absolute top-0 right-0 m-2 bg-transparent border-none z-50"
           onClick={() => setRightSidebar(prev => !prev)}
-          ><Icon name="bars_arrow_down" size={32} color="black"/>
+          ><Icon name="bars_arrow_down" size={36} color="black"/>
         </button>
 
         {rightSidebar && (

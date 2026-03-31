@@ -1,9 +1,11 @@
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { useState } from "react";
 import { useMe } from "@packages/utils";
 import { api } from "@/lib/api";
 import { useAuth } from "@packages/utils";
 import { Icon } from "@packages/icons"
+import { BlackNinja } from "@packages/images";
+import { RedNinja } from "@packages/images";
 
 
 const LeftSidebar = () => {
@@ -24,13 +26,17 @@ const LeftSidebar = () => {
 
       {leftSidebar && (
         <View style={styles.leftSidebar}>
+          <Image 
+            source={BlackNinja}
+            style={styles.image} 
+          />
           <Text style={styles.title}>Personal Info:</Text>
 
           {/* User info */}
           {error && <Text style={styles.errorText}>{error}</Text>}
           {user && (
             <View style={styles.content}>
-              <Text style={styles.title}>Username: {user.username}</Text>
+              <Text style={styles.subTitle}>Username: {user.username}</Text>
               <Text style={styles.text}>Email: {user.email}</Text>
             </View>
           )}
@@ -48,7 +54,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderWidth: 1,
     borderColor: 'black',
-    paddingTop: 50,
     alignItems: 'center',
   },
   leftSidebarControler: {
@@ -58,18 +63,30 @@ const styles = StyleSheet.create({
     zIndex: 50,
     elevation: 50,
   },
-  content: {
-    marginTop: 5,
+  image: {
+    width: 80,
+    height: 80,
+    marginTop: 24,
   },
   title: {
     color: 'black',
     fontWeight: 'bold',
     fontSize: 24,
-    paddingBottom: 5,
+    marginTop: 32,
+  },
+  content: {
+    paddingTop: 32,
+  },
+  subTitle: {
+    color: 'black',
+    fontWeight: 'bold',
+    fontSize: 16,
+    marginBottom: 4,
   },
   text: {
     color: 'black',
     fontSize: 16,
+    marginBottom: 4,
   },
   errorText: {
     color: 'red',
