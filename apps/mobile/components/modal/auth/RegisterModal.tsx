@@ -9,9 +9,10 @@ import { api } from "@/lib/api";
 type RegisterModalProps = {
   modalVisible: boolean;
   setModalVisible: (visible: boolean) => void;
+  handleToken: (token: string) => Promise<void>;
 };
 
-const RegisterModal = ({ modalVisible, setModalVisible }: RegisterModalProps) => {
+const RegisterModal = ({ modalVisible, setModalVisible, handleToken }: RegisterModalProps) => {
   const { register } = useRegister(api);
   const router = useRouter();
   const [username, setUsername] = useState("");
@@ -22,7 +23,8 @@ const RegisterModal = ({ modalVisible, setModalVisible }: RegisterModalProps) =>
 
   const handleRegistration = async() => {
     try {
-      await register(username, email, password, gender);
+      const res = await register(username, email, password, gender);
+      await handleToken(res.token);
       setModalVisible(false);
       router.push("/profile");
     }

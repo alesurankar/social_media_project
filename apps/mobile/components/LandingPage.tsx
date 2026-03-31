@@ -41,6 +41,7 @@ const LandingPage = () => {
       <RegisterModal 
         modalVisible={registerOpen}
         setModalVisible={setRegisterOpen}
+        handleToken={handleToken}
       />
     </View>
   );
