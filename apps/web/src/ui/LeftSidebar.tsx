@@ -19,15 +19,15 @@ const LeftSideBar = () => {
       </button>
       
       {leftSidebar && (
-        <div className="w-[18%] min-w-[200px] border bg-[#fff]">
-          <h3 className="pt-20">Left Sidebar</h3>
+        <div className="flex flex-col items-center w-[18%] min-w-[200px] border bg-[#fff]">
+          <h3 className="pt-20">Personal Info:</h3>
 
           {/* User info */}
           {error && <p className="text-red-500">{error}</p>}
           {user && (
             <div className="mt-4">
-              <p className="font-bold">{user.username}</p>
-              <p className="text-sm text-gray-600">{user.email}</p>
+              <p className="text-lg font-bold">Username: {user.username}</p>
+              <p className="text-lg text-gray-600">Email: {user.email}</p>
             </div>
           )}
           {!user && !error && <p>No user logged in</p>}

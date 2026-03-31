@@ -24,17 +24,17 @@ const LeftSidebar = () => {
 
       {leftSidebar && (
         <View style={styles.leftSidebar}>
-          <Text style={styles.text}>Left Sidebar</Text>
+          <Text style={styles.title}>Personal Info:</Text>
 
           {/* User info */}
-          {error && <Text>{error}</Text>}
+          {error && <Text style={styles.errorText}>{error}</Text>}
           {user && (
-            <View>
-              <Text>{user.Username}</Text>
-              <Text>{user.email}</Text>
+            <View style={styles.content}>
+              <Text style={styles.title}>Username: {user.username}</Text>
+              <Text style={styles.text}>Email: {user.email}</Text>
             </View>
           )}
-          {!user && !error && <Text>No user logged in</Text>}
+          {!user && !error && <Text style={styles.text}>No user logged in</Text>}
         </View>
       )}
     </>
@@ -44,11 +44,12 @@ const LeftSidebar = () => {
 
 const styles = StyleSheet.create({
   leftSidebar: {
-    flex: 1,
+    flex: 2,
     backgroundColor: '#fff',
     borderWidth: 1,
     borderColor: 'black',
     paddingTop: 50,
+    alignItems: 'center',
   },
   leftSidebarControler: {
     position: 'absolute',
@@ -57,9 +58,22 @@ const styles = StyleSheet.create({
     zIndex: 50,
     elevation: 50,
   },
+  content: {
+    marginTop: 5,
+  },
+  title: {
+    color: 'black',
+    fontWeight: 'bold',
+    fontSize: 24,
+    paddingBottom: 5,
+  },
   text: {
     color: 'black',
-    fontSize: 30,
+    fontSize: 16,
+  },
+  errorText: {
+    color: 'red',
+    fontSize: 16,
   },
 });
 
