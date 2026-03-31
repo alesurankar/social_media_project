@@ -17,7 +17,7 @@ import sendToken from "../helpers/sendToken.js";
 export const registerUser = asyncErrorHandler(async (req, res, next) => {
   console.log("🔥 registerUser triggered");
 
-  const { username, email, password } = req.body;
+  const { username, email, password, gender } = req.body;
 
   const existingUser = await User.findOne({ email });
   if (existingUser) {
@@ -28,6 +28,7 @@ export const registerUser = asyncErrorHandler(async (req, res, next) => {
     username,
     email,     
     password,
+    gender,
   });
   sendToken(user, 201, res);
 });

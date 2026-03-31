@@ -1,6 +1,6 @@
 import { useRouter } from 'expo-router';
 import { useState } from "react";
-import { View, TextInput, StyleSheet } from "react-native";
+import { View, Text, TextInput, StyleSheet, TouchableOpacity } from "react-native";
 import BaseModal from "../BaseModal";
 import { useRegister } from "@packages/utils";
 import { api } from "@/lib/api";
@@ -17,10 +17,12 @@ const RegisterModal = ({ modalVisible, setModalVisible }: RegisterModalProps) =>
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [gender, setGender] = useState("");
+  const options = ["male", "female", "other"];
 
   const handleRegistration = async() => {
     try {
-      await register(username, email, password);
+      await register(username, email, password, gender);
       setModalVisible(false);
       router.push("/profile");
     }
@@ -60,6 +62,23 @@ const RegisterModal = ({ modalVisible, setModalVisible }: RegisterModalProps) =>
           value={password}
           onChangeText={setPassword}
         />
+
+        <View style={{ marginTop: 10 }}>
+          <Text style={{ fontWeight: "bold", marginBottom: 5 }}>Gender</Text>
+
+          {options.map((option) => (
+            <TouchableOpacity
+              key={option}
+              style={styles.option}
+              onPress={() => setGender(option)}
+            >
+              <View style={styles.radio}>
+                {gender === option && <View style={styles.selected} />}
+              </View>
+              <Text>{option}</Text>
+            </TouchableOpacity>
+          ))}
+        </View>
       </View>
     </BaseModal>
   );
@@ -72,6 +91,27 @@ const styles = StyleSheet.create ({
     borderRadius: 8,
     padding: 10,
     marginBottom: 10
+  },
+  option: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginVertical: 6,
+  },
+  radio: {
+    height: 20,
+    width: 20,
+    borderRadius: 10,
+    borderWidth: 2,
+    borderColor: "black",
+    alignItems: "center",
+    justifyContent: "center",
+    marginRight: 10,
+  },
+  selected: {
+    height: 10,
+    width: 10,
+    borderRadius: 5,
+    backgroundColor: "black",
   },
 });
 
