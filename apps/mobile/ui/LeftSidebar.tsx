@@ -5,7 +5,6 @@ import { api } from "@/lib/api";
 import { useAuth } from "@packages/utils";
 import { Icon } from "@packages/icons"
 import { BlackNinja } from "@packages/images";
-import { RedNinja } from "@packages/images";
 
 
 const LeftSidebar = () => {

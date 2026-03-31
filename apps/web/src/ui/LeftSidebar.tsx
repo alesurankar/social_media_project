@@ -6,8 +6,6 @@ import { Icon } from "@packages/icons";
 import { useMe } from "@packages/utils";
 import { api } from "@/lib/api";
 import { BlackNinja } from "@packages/images";
-import { RedNinja } from "@packages/images";
-import { Other } from "@packages/images";
 
 
 const LeftSideBar = () => {
@@ -25,7 +23,7 @@ const LeftSideBar = () => {
       {leftSidebar && (
         <div className="flex flex-col items-center w-[18%] min-w-[200px] border bg-[#fff]">
           <Image
-            src={Other}
+            src={BlackNinja}
             alt="picture"
             width={120}
             height={120}
