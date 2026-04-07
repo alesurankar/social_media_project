@@ -26,7 +26,7 @@ const Profile = () => {
           className="outline-none resize-none text-xl w-full overflow-hidden"
         />
       </div>
-      <button className="w-[20%] text-white mt-4">post</button>
+      <button className="h-8 w-[20%] text-white mt-4">post</button>
     </div>
   );
 }
