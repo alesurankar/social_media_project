@@ -12,3 +12,4 @@ last updated: 31.3.2026
 - [ ] extract identical code from mobile and web to make reusable components
 - [ ] add post feed support
 - [ ] add cloudinary image loading and editing
+- [ ] add search system to look for registered users
