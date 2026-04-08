@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 
 
-const useMe = (api: any, token?: string, ready?: boolean) => {
+const useGetUserDetails = (api: any, token?: string, ready?: boolean) => {
   const [user, setUser] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
 
-  const me = async () => {
-
+  const getUserDetails = async () => {
     setError(null);
+    
     try {
       console.log("packages/utils/useMe.ts: USER DETAILS TRIGGERED");
       const headers = token ? { Authorization: `Bearer ${token}` } : undefined;
@@ -23,10 +23,10 @@ const useMe = (api: any, token?: string, ready?: boolean) => {
   };
 
   useEffect(() => {
-      me();
+      getUserDetails();
   }, []);
 
-  return { user, error, refetch: me };
+  return { user, error, refetch: getUserDetails };
 };
 
-export default useMe;
+export default useGetUserDetails;

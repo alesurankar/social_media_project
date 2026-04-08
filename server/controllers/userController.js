@@ -93,12 +93,10 @@ export const getUserDetails = asyncErrorHandler(async (req, res, next) => {
  */
 export const updateUser = asyncErrorHandler(async (req, res, next) => {
   console.log("🔥 Server/userController: updateUser triggered");
-
   const user = await User.findById(req.user.id);
   if (!user) {
     return res.status(404).json({ message: "User not found" });
   }
-
   const { username, email, gender } = req.body;
 
   // USERNAME
@@ -106,13 +104,11 @@ export const updateUser = asyncErrorHandler(async (req, res, next) => {
     if (!username.trim()) {
       return res.status(400).json({ message: "Username cannot be empty" });
     }
-
     // check duplicate
     const existingUser = await User.findOne({ username });
     if (existingUser && existingUser._id.toString() !== user._id.toString()) {
       return res.status(400).json({ message: "Username already taken" });
     }
-
     user.username = username;
   }
 
@@ -121,15 +117,13 @@ export const updateUser = asyncErrorHandler(async (req, res, next) => {
     if (!email) {
       return res.status(400).json({ message: "Email cannot be empty" });
     }
-
     // normalize (extra safety, even though schema does it)
     const normalizedEmail = email.toLowerCase().trim();
-
+    
     const existingUser = await User.findOne({ email: normalizedEmail });
     if (existingUser && existingUser._id.toString() !== user._id.toString()) {
       return res.status(400).json({ message: "Email already in use" });
     }
-
     user.email = normalizedEmail;
     user.isEmailVerified = false;
   }
@@ -140,7 +134,6 @@ export const updateUser = asyncErrorHandler(async (req, res, next) => {
   }
 
   await user.save();
-
   res.status(200).json({
     success: true,
     user,

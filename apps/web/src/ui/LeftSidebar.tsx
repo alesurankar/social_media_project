@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Icon } from "@packages/icons";
-import { useMe } from "@packages/utils";
+import { useGetUserDetails } from "@packages/utils";
 import { api } from "@/lib/api";
 import { BlackNinja } from "@packages/images";
 import AddEmailModal from "@/components/modal/auth/AddEmailModal";
@@ -11,7 +11,7 @@ import AddEmailModal from "@/components/modal/auth/AddEmailModal";
 
 const LeftSideBar = () => {
   const [leftSidebar, setLeftSidebar] = useState(true);  
-  const { user, error } = useMe(api);
+  const { user, error } = useGetUserDetails(api);
   const [addEmailOpen, setAddEmailOpen] = useState(false);
 
   return (

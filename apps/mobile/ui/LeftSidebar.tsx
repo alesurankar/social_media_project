@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, Image, TouchableOpacity, Pressable } from "react-native";
 import { useState } from "react";
-import { useMe } from "@packages/utils";
+import { useGetUserDetails } from "@packages/utils";
 import { api } from "@/lib/api";
 import { useAuth } from "@packages/utils";
 import { Icon } from "@packages/icons"
@@ -11,7 +11,7 @@ import AddEmailModal from "@/components/modal/auth/AddEmailModal";
 const LeftSidebar = () => {
   const [leftSidebar, setLeftSidebar] = useState(false);
   const { token, ready } = useAuth();
-  const { user, error } = useMe(api, ready ? token : undefined);
+  const { user, error } = useGetUserDetails(api, ready ? token : undefined);
   const [addEmailOpen, setAddEmailOpen] = useState(false);
 
   return (

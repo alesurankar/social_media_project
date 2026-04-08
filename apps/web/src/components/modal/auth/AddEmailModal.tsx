@@ -21,7 +21,6 @@ const AddEmailModal = ({ modalVisible, setModalVisible }: AddEmailModalProps) =>
       alert("Email cannot be empty");
       return;
     }
-
     try {
       await updateUser({ email });
       setModalVisible(false);

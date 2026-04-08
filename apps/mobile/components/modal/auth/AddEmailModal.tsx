@@ -1,5 +1,8 @@
-import { View, TextInput, StyleSheet } from "react-native";
+import { useState } from "react";
+import { View, Text, TextInput, StyleSheet, Pressable } from "react-native";
 import BaseModal from "../comon/BaseModal";
+import { useUpdateUser } from "@packages/utils";
+import { api } from "@/lib/api";
 
 
 type AddEmailModalProps = {
@@ -8,6 +11,23 @@ type AddEmailModalProps = {
 };
 
 const AddEmailModal = ({ modalVisible, setModalVisible }: AddEmailModalProps) => {
+  const { updateUser } = useUpdateUser(api);
+  const [email, setEmail] = useState("");
+
+  const handleSubmit = async () => {
+    if (!email.trim()) {
+      alert("Email cannot be empty");
+      return;
+    }
+    try {
+      await updateUser({ email });
+      setModalVisible(false);
+      setEmail("");
+    } 
+    catch (err: any) {
+      alert("Something went wrong");
+    }
+  };
 
   return (
     <BaseModal
@@ -19,7 +39,17 @@ const AddEmailModal = ({ modalVisible, setModalVisible }: AddEmailModalProps) =>
         <TextInput
           style={styles.input}
           placeholder="Add Email"
+          value={email}
+          onChangeText={setEmail}
+          keyboardType="email-address"
+          autoCapitalize="none"
         />
+        <Pressable
+          style={styles.button}
+          onPress={handleSubmit}
+        >
+          <Text style={styles.buttonText}>Add Email</Text>
+        </Pressable>
       </View>
     </BaseModal>
   );
@@ -32,6 +62,16 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     padding: 10,
     marginBottom: 10,
+  },
+  button: {
+    backgroundColor: "#007bff",
+    padding: 12,
+    borderRadius: 8,
+    alignItems: "center",
+  },
+  buttonText: {
+    color: "#fff",
+    fontWeight: "bold",
   },
 });
 

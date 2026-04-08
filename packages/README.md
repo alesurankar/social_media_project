@@ -17,9 +17,9 @@ packages/
 │   └─ navigationConfig.ts    # data for Navigation component
 └─ utils/
     ├─ auth/  
+    │  ├─ useGetUserDetails.ts 
     │  ├─ useLogin.ts 
     │  ├─ useLogout.ts 
-    │  ├─ useMe.ts 
     │  ├─ useRegister.ts 
     │  └─ useUpdateUser.ts
     ├─ context/
