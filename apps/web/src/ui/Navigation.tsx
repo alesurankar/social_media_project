@@ -4,7 +4,7 @@ import { useRouter, usePathname } from "next/navigation";
 import { useState } from "react";
 import { Icon } from "@packages/icons";
 import { navigationConfig } from "@packages/navigation";
-import TestModal from "@/components/modal/comon/TestModal";
+import SearchModal from "@/components/modal/search/SearchModal";
 import BaseDropdown from "@/components/dropdown/BaseDropdown";
 import { useLogout } from "@packages/utils";
 import { api } from "@/lib/api";
@@ -34,7 +34,7 @@ const Navigation = ({className}: NavigationProps) => {
   return (
     <div className={`bg-[#333344] items-center justify-between p-4 px-10 ${className}`}>
       {/* Modal */}
-      <TestModal 
+      <SearchModal 
         modalVisible={searchOpen}
         setModalVisible={setSearchOpen}
       />

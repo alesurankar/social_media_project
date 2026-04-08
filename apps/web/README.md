@@ -48,9 +48,11 @@ apps/web/
 │  │   │  │  ├─ AddEmailModal.tsx
 │  │   │  │  ├─ LoginModal.tsx
 │  │   │  │  └─ RegisterModal.tsx
-│  │   │  └─ comon
-│  │   │     ├─ BaseModal.tsx
-│  │   │     └─ TestModal.tsx
+│  │   │  ├─ comon
+│  │   │  │  ├─ BaseModal.tsx
+│  │   │  │  └─ TestModal.tsx
+│  │   │  └─ search
+│  │   │     └─ SearchModal.tsx
 │  │   ├─ LandingPage.tsx
 │  │   └─ TestingPage.tsx
 │  │

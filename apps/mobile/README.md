@@ -70,9 +70,11 @@ apps/mobile/
 │      │  ├─ AddEmailModal.tsx
 │      │  ├─ LoginModal.tsx
 │      │  └─ RegisterModal.tsx
-│      └─ comon/
-│         ├─ BaseModal.tsx
-│         └─ TestModal.tsx
+│      ├─ comon/
+│      │  ├─ BaseModal.tsx
+│      │  └─ TestModal.tsx
+│      └─ search/
+│         └─ SearchModal.tsx
 │
 ├─ lib/
 │   └─ api.ts         # imports { createApiClient } from packages
