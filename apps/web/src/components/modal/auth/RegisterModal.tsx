@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import BaseModal from "../BaseModal";
+import BaseModal from "../comon/BaseModal";
 import { useRegister } from "@packages/utils";
 import { api } from "@/lib/api";
 

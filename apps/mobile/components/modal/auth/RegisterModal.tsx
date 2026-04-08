@@ -1,7 +1,7 @@
 import { useRouter } from 'expo-router';
 import { useState } from "react";
 import { View, Text, TextInput, StyleSheet, TouchableOpacity } from "react-native";
-import BaseModal from "../BaseModal";
+import BaseModal from "../comon/BaseModal";
 import { useRegister } from "@packages/utils";
 import { api } from "@/lib/api";
 

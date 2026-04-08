@@ -59,7 +59,9 @@ apps/mobile/
 │   │   └─ _layout.tsx
 │   ├─ _layout.tsx
 │   └─ index.tsx     # App Entry
+│
 ├─ assets/
+│
 ├─ components/
 │   ├─ dropdown/
 │   │  └─ BaseDropdown.tsx
@@ -68,13 +70,18 @@ apps/mobile/
 │      │  ├─ AddEmailModal.tsx
 │      │  ├─ LoginModal.tsx
 │      │  └─ RegisterModal.tsx
-│      └─ BaseModal.tsx
+│      └─ comon/
+│         ├─ BaseModal.tsx
+│         └─ TestModal.tsx
+│
 ├─ lib/
 │   └─ api.ts         # imports { createApiClient } from packages
+│
 ├─ ui/
 │   ├─ Body.tsx
 │   ├─ LeftSidebar.tsx
 │   ├─ RightSidebar.tsx
 │   └─ Navigation.tsx
+│
 └─ .env               # Base URL of backend API
  ```

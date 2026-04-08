@@ -1,6 +1,6 @@
 "use client";
 
-import BaseModal from "../BaseModal";
+import BaseModal from "../comon/BaseModal";
 
 
 type AddEmailModalProps = {

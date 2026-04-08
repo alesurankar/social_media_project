@@ -35,9 +35,11 @@ apps/web/
 │  │  │   ├─ profile/
 │  │  │   │   └─ page.tsx
 │  │  │   └─ layout.tsx
+│  │  │
 │  │  ├─ global.css
 │  │  ├─ layout.tsx
 │  │  └─ page.tsx       # App entry
+│  │
 │  ├─ components/
 │  │   ├─ dropdown/
 │  │   │  └─ BaseDropdown.tsx
@@ -46,15 +48,20 @@ apps/web/
 │  │   │  │  ├─ AddEmailModal.tsx
 │  │   │  │  ├─ LoginModal.tsx
 │  │   │  │  └─ RegisterModal.tsx
-│  │   │  └─ BaseModal.tsx
+│  │   │  └─ comon
+│  │   │     ├─ BaseModal.tsx
+│  │   │     └─ TestModal.tsx
 │  │   ├─ LandingPage.tsx
 │  │   └─ TestingPage.tsx
+│  │
 │  ├─ lib/
 │  │  └─ api.ts    # imports { createApiClient } from packages
+│  │
 │  └─ ui/
 │     ├─ Body.tsx
 │     ├─ LeftSidebar.tsx
 │     ├─ RightSidebar.tsx
 │     └─ Navigation.tsx
+│
 └─ .env.local          # Base URL of backend API
  ```
