@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 
-const useGetUserDetails = (api: any, token?: string, ready?: boolean) => {
+const useGetUserDetails = (api: any, token?: string) => {
   const [user, setUser] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
 
