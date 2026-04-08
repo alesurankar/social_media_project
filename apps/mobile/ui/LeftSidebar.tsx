@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity, Pressable } from "react-native";
 import { useState } from "react";
 import { useMe } from "@packages/utils";
 import { api } from "@/lib/api";
@@ -36,7 +36,11 @@ const LeftSidebar = () => {
           {user && (
             <View style={styles.content}>
               <Text style={styles.subTitle}>Username: {user.username}</Text>
-              {/* <Text style={styles.text}>Email: {user.email}</Text> */}
+              {user.email ? (
+                <Text style={styles.text}>Email: {user.email}</Text>
+              ) : (
+                <Pressable><Text style={styles.link}>+ Add email</Text></Pressable>
+              )}
             </View>
           )}
           {!user && !error && <Text style={styles.text}>No user logged in</Text>}
@@ -86,6 +90,10 @@ const styles = StyleSheet.create({
     color: 'black',
     fontSize: 16,
     marginBottom: 4,
+  },
+  link: {
+    color: 'blue',
+    textDecorationLine: "underline",
   },
   errorText: {
     color: 'red',
