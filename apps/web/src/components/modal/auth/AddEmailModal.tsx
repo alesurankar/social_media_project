@@ -16,6 +16,11 @@ const AddEmailModal = ({ modalVisible, setModalVisible }: AddEmailModalProps) =>
       setModalVisible={setModalVisible}
       title="Add Email"
     >
+      <input
+        type="email"
+        placeholder="Add Email"
+        className="w-full p-2 border border-gray-300 rounded"
+      />
     </BaseModal>
   );
 };

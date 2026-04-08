@@ -1,5 +1,4 @@
-"use client";
-
+import { View, TextInput, StyleSheet } from "react-native";
 import BaseModal from "../comon/BaseModal";
 
 
@@ -16,8 +15,24 @@ const SearchModal = ({ modalVisible, setModalVisible }: SearchModalProps) => {
       setModalVisible={setModalVisible}
       title="Search"
     >
+      <View>
+        <TextInput
+          style={styles.input}
+          placeholder="search..."
+        />
+      </View>
     </BaseModal>
   );
 };
+
+const styles = StyleSheet.create({
+  input: {
+    borderWidth: 1,
+    borderColor: "#ccc",
+    borderRadius: 8,
+    padding: 10,
+    marginBottom: 10,
+  },
+});
 
 export default SearchModal;
