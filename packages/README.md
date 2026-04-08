@@ -20,7 +20,8 @@ packages/
     │  ├─ useLogin.ts 
     │  ├─ useLogout.ts 
     │  ├─ useMe.ts 
-    │  └─ useRegister.ts
+    │  ├─ useRegister.ts 
+    │  └─ useUpdateUser.ts
     ├─ context/
     │  └─ AuthContext.tsx
     ├─ createApiClient.ts   # shared typed axios client    
