@@ -45,7 +45,7 @@ const LeftSideBar = () => {
             <div className="mt-4">
               <p className="text-lg font-bold mb-1">Username: {user.username}</p>
               {user.email ? (
-                <p className="text-lg mb-1">Email: {user.emai}</p>
+                <p className="text-lg mb-1">Email: {user.email}</p>
               ) : (
                 <button 
                   className="text-blue-600 underline bg-white"
