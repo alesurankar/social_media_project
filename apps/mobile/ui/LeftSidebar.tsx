@@ -5,13 +5,14 @@ import { api } from "@/lib/api";
 import { useAuth } from "@packages/utils";
 import { Icon } from "@packages/icons"
 import { BlackNinja } from "@packages/images";
+import TestModal from "@/components/modal/TestModal";
 
 
 const LeftSidebar = () => {
   const [leftSidebar, setLeftSidebar] = useState(false);
-  
   const { token, ready } = useAuth();
-  const { user, error, refetch } = useMe(api, ready ? token : undefined);
+  const { user, error } = useMe(api, ready ? token : undefined);
+  const [addEmailOpen, setAddEmailOpen] = useState(false);
 
   return (
     <>
@@ -22,6 +23,12 @@ const LeftSidebar = () => {
           <Icon name="bars_arrow_down" size={32} color="black"/>
         </Text>
       </TouchableOpacity>
+
+      {/* Modal */}
+      <TestModal 
+        modalVisible={addEmailOpen}
+        setModalVisible={setAddEmailOpen}
+      />
 
       {leftSidebar && (
         <View style={styles.leftSidebar}>
@@ -39,7 +46,13 @@ const LeftSidebar = () => {
               {user.email ? (
                 <Text style={styles.text}>Email: {user.email}</Text>
               ) : (
-                <Pressable><Text style={styles.link}>+ Add email</Text></Pressable>
+                <Pressable 
+                  onPress={() => setAddEmailOpen(true)}
+                  style={({ pressed }) => [{
+                    transform: [{ scale: pressed ? 0.90 : 1 }]
+                  }]}
+                  ><Text style={styles.link}>+ Add email</Text>
+                </Pressable>
               )}
             </View>
           )}

@@ -6,11 +6,13 @@ import { Icon } from "@packages/icons";
 import { useMe } from "@packages/utils";
 import { api } from "@/lib/api";
 import { BlackNinja } from "@packages/images";
+import TestModal from "@/components/modal/TestModal";
 
 
 const LeftSideBar = () => {
   const [leftSidebar, setLeftSidebar] = useState(true);  
   const { user, error } = useMe(api);
+  const [addEmailOpen, setAddEmailOpen] = useState(false);
 
   return (
     <>
@@ -19,6 +21,12 @@ const LeftSideBar = () => {
         onClick={() => setLeftSidebar(prev => !prev)}
         ><Icon name="bars_arrow_down" size={36} color="black"/>
       </button>
+
+      {/* Modal */}
+      <TestModal 
+        modalVisible={addEmailOpen}
+        setModalVisible={setAddEmailOpen}
+      />
       
       {leftSidebar && (
         <div className="flex flex-col items-center w-[18%] min-w-[200px] border bg-[#fff]">
@@ -39,7 +47,11 @@ const LeftSideBar = () => {
               {user.email ? (
                 <p className="text-lg mb-1">Email: {user.emai}</p>
               ) : (
-                <button className="text-blue-600 underline bg-white">+ Add email</button>
+                <button 
+                  className="text-blue-600 underline bg-white"
+                  onClick={() => setAddEmailOpen(true)}
+                  >+ Add email
+                </button>
               )}
             </div>
           )}
