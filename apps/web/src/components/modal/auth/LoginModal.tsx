@@ -15,12 +15,12 @@ type LoginModalProps = {
 const LoginModal = ({ modalVisible, setModalVisible }: LoginModalProps) => {
   const { login } = useLogin(api);
   const router = useRouter();
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const handleLogin = async() => {
     try {
-      await login(email, password);
+      await login(username, password);
       setModalVisible(false);
       router.push("/home");
     } 
@@ -40,10 +40,10 @@ const LoginModal = ({ modalVisible, setModalVisible }: LoginModalProps) => {
     >
       <div className="flex flex-col gap-3">
         <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
           className="w-full p-2 border border-gray-300 rounded"
         />
 

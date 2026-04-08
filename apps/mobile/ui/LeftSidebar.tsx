@@ -36,7 +36,7 @@ const LeftSidebar = () => {
           {user && (
             <View style={styles.content}>
               <Text style={styles.subTitle}>Username: {user.username}</Text>
-              <Text style={styles.text}>Email: {user.email}</Text>
+              {/* <Text style={styles.text}>Email: {user.email}</Text> */}
             </View>
           )}
           {!user && !error && <Text style={styles.text}>No user logged in</Text>}

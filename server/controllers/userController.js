@@ -16,16 +16,15 @@ import sendToken from "../helpers/sendToken.js";
  */
 export const registerUser = asyncErrorHandler(async (req, res, next) => {
   console.log("🔥 Server/userController: registerUser triggered");
-  const { username, email, password, gender } = req.body;
+  const { username, password, gender } = req.body;
 
-  const existingUser = await User.findOne({ email });
+  const existingUser = await User.findOne({ username });
   if (existingUser) {
-    return res.status(400).json({ message: "User already exists" });
+    return res.status(400).json({ message: "Username already taken" });
   }
 
   const user = await User.create ({
     username,
-    email,     
     password,
     gender,
   });
@@ -40,16 +39,16 @@ export const registerUser = asyncErrorHandler(async (req, res, next) => {
  */
 export const loginUser = asyncErrorHandler(async (req, res, next) => {
   console.log("🔥 Server/userController: loginUser triggered");
-  const { email, password } = req.body;
+  const { username, password } = req.body;
   
-  const user = await User.findOne({ email }).select("+password");
+  const user = await User.findOne({ username }).select("+password");
   if (!user) {
-    return res.status(401).json({ message: "Invalid email or password" });
+    return res.status(401).json({ message: "Invalid username or password" });
   }
 
   const isPasswordMatched = await user.comparePassword(password);
   if (!isPasswordMatched) {
-    return res.status(401).json({ message: "Invalid email or password" });
+    return res.status(401).json({ message: "Invalid username or password" });
   }
 
   sendToken(user, 200, res);

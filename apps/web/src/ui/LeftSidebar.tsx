@@ -36,7 +36,7 @@ const LeftSideBar = () => {
           {user && (
             <div className="mt-4">
               <p className="text-lg font-bold mb-1">Username: {user.username}</p>
-              <p className="text-lg mb-1">Email: {user.email}</p>
+              {/* <p className="text-lg mb-1">Email: {user.email}</p> */}
             </div>
           )}
           {!user && !error && <p>No user logged in</p>}

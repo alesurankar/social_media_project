@@ -15,12 +15,12 @@ type LoginModalProps = {
 const LoginModal = ({ modalVisible, setModalVisible, handleToken }: LoginModalProps) => {
   const { login } = useLogin(api);
   const router = useRouter();
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const handleLogin = async() => {
     try {
-      const res = await login(email, password);
+      const res = await login(username, password);
       await handleToken(res.token);
       setModalVisible(false);
       router.push("/home");
@@ -42,9 +42,9 @@ const LoginModal = ({ modalVisible, setModalVisible, handleToken }: LoginModalPr
       <View>
         <TextInput
           style={styles.input}
-          placeholder="Email"
-          value={email}
-          onChangeText={setEmail}
+          placeholder="Username"
+          value={username}
+          onChangeText={setUsername}
         />
 
         <TextInput

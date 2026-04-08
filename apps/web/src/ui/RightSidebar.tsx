@@ -5,7 +5,7 @@ import { Icon } from "@packages/icons";
 
 
 const RightSidebar = () => {
-  const [rightSidebar, setRightSidebar] = useState(true);  
+  const [rightSidebar, setRightSidebar] = useState(false);  
 
   return (
     <>

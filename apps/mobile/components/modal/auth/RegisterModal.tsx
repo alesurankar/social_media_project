@@ -16,14 +16,13 @@ const RegisterModal = ({ modalVisible, setModalVisible, handleToken }: RegisterM
   const { register } = useRegister(api);
   const router = useRouter();
   const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [gender, setGender] = useState("");
   const options = ["male", "female", "other"];
 
   const handleRegistration = async() => {
     try {
-      const res = await register(username, email, password, gender);
+      const res = await register(username, password, gender);
       await handleToken(res.token);
       setModalVisible(false);
       router.push("/profile");
@@ -48,13 +47,6 @@ const RegisterModal = ({ modalVisible, setModalVisible, handleToken }: RegisterM
           placeholder="username"
           value={username}
           onChangeText={setUsername}
-        />
-
-        <TextInput
-          style={styles.input}
-          placeholder="e-mail"
-          value={email}
-          onChangeText={setEmail}
         />
 
         <TextInput

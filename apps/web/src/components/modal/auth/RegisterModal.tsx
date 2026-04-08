@@ -16,14 +16,13 @@ const RegisterModal = ({ modalVisible, setModalVisible }: RegisterModalProps) =>
   const { register } = useRegister(api);
   const router = useRouter();
   const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [gender, setGender] = useState("");
   const options = ["male", "female", "other"];
 
   const handleRegistration = async() => {
     try {
-      await register(username, email, password, gender);
+      await register(username, password, gender);
       setModalVisible(false);
       router.push("/profile");
     }
@@ -47,14 +46,6 @@ const RegisterModal = ({ modalVisible, setModalVisible }: RegisterModalProps) =>
           placeholder="username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          className="w-full p-2 border border-gray-300 rounded"
-        />
-
-        <input
-          type="email"
-          placeholder="e-mail"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
           className="w-full p-2 border border-gray-300 rounded"
         />
 
