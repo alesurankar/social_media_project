@@ -6,7 +6,7 @@ import { Icon } from "@packages/icons";
 import { useMe } from "@packages/utils";
 import { api } from "@/lib/api";
 import { BlackNinja } from "@packages/images";
-import TestModal from "@/components/modal/TestModal";
+import AddEmailModal from "@/components/modal/auth/AddEmailModal";
 
 
 const LeftSideBar = () => {
@@ -23,7 +23,7 @@ const LeftSideBar = () => {
       </button>
 
       {/* Modal */}
-      <TestModal 
+      <AddEmailModal 
         modalVisible={addEmailOpen}
         setModalVisible={setAddEmailOpen}
       />

@@ -1,22 +1,21 @@
-import BaseModal from "./BaseModal";
+import BaseModal from "../BaseModal";
 
 
-type TestModalProps = {
+type AddEmailModalProps = {
   modalVisible: boolean;
   setModalVisible: (visible: boolean) => void;
 };
 
-const TestModal = ({ modalVisible, setModalVisible }: TestModalProps) => {
+const AddEmailModal = ({ modalVisible, setModalVisible }: AddEmailModalProps) => {
 
   return (
     <BaseModal
       modalVisible={modalVisible}
       setModalVisible={setModalVisible}
-      title="Test Modal"
+      title="Add Email"
     >
-     
     </BaseModal>
   );
 };
 
-export default TestModal;
+export default AddEmailModal;

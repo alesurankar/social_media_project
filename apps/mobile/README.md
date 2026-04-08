@@ -65,6 +65,7 @@ apps/mobile/
 │   │  └─ BaseDropdown.tsx
 │   └─ modal/
 │      ├─ auth/
+│      │  ├─ AddEmailModal.tsx
 │      │  ├─ LoginModal.tsx
 │      │  └─ RegisterModal.tsx
 │      └─ BaseModal.tsx
