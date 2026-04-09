@@ -8,10 +8,11 @@ import { api } from "@/lib/api";
 type AddEmailModalProps = {
   modalVisible: boolean;
   setModalVisible: (visible: boolean) => void;
+  token?: string;
 };
 
-const AddEmailModal = ({ modalVisible, setModalVisible }: AddEmailModalProps) => {
-  const { updateUser } = useUpdateUser(api);
+const AddEmailModal = ({ modalVisible, setModalVisible, token }: AddEmailModalProps) => {
+  const { updateUser } = useUpdateUser(api, token);
   const [email, setEmail] = useState("");
 
   const handleSubmit = async () => {
@@ -47,8 +48,7 @@ const AddEmailModal = ({ modalVisible, setModalVisible }: AddEmailModalProps) =>
         <Pressable
           style={styles.button}
           onPress={handleSubmit}
-        >
-          <Text style={styles.buttonText}>Add Email</Text>
+        ><Text style={styles.buttonText}>Add Email</Text>
         </Pressable>
       </View>
     </BaseModal>

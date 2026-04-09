@@ -28,6 +28,7 @@ const LeftSidebar = () => {
       <AddEmailModal 
         modalVisible={addEmailOpen}
         setModalVisible={setAddEmailOpen}
+        token={token}
       />
 
       {leftSidebar && (
